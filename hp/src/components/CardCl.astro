@@ -1,0 +1,104 @@
+---
+import { Image } from 'astro:assets';
+import Sample from "../assets/images/sample.jpg";
+
+const baseUrl = import.meta.env.BASE_URL;
+---
+<a class="card" href={`${baseUrl}`}>
+  <div class="card__img">
+    <Image src={Sample} alt="コラムの内容に適した画像" />
+  </div>
+    <div class="card__body-header">
+      <p class="categry__name">カテゴリが入ります。</p>
+      <time datetime="2025-06-03" class="card__date">2025/06/30</time>
+    </div>
+    <h3 class="card__title">ここにタイトルが入ります。</h3>
+</a>
+
+<style>
+.card {
+  display: grid;
+  grid-row: span 3;
+  grid-template-rows: subgrid;
+  gap: 0;
+  align-items: start;
+  gap: calc(15* var(--torem));
+  inline-size: 100%;
+  margin-inline: auto;
+max-inline-size: calc(400* var(--torem));
+  background-color: var(--white);
+  padding:calc(20* var(--torem));
+  text-decoration: none;
+    transition: all 0.3s ease-in-out;
+
+  @media(width >= 48rem) {
+      max-inline-size: calc(340* var(--torem));
+      inline-size: 100%;
+        padding:fluid( 10px 19px);
+  }
+}
+@media (any-hover: hover) {
+
+.card:hover {
+  opacity: 0.8;
+  transform: translateY(-10px);
+  transition: transform 0.3s ease-in-out;
+}
+}
+
+.card__img {
+max-inline-size: calc(400* var(--torem));
+inline-size: 100%;
+margin-inline: auto;
+img{
+  aspect-ratio: 295/212;
+  object-fit: cover;
+  inline-size: 100%;
+  block-size: 100%;
+}
+@media(width >= 48rem) {
+  max-inline-size: calc(295* var(--torem));
+}
+}
+
+
+
+.card__body-header {
+display: flex;
+align-items: center;
+gap: calc(10* var(--torem));
+}
+
+.categry__name {
+color: var(--white);
+letter-spacing: 0.1em;
+padding: calc(3* var(--torem)) calc(5* var(--torem));
+font-size:calc(11* var(--torem));
+background: linear-gradient(86.82deg, #20377A 4.26%, #2C85C5 92.99%);
+font-weight: 700;
+@media(width >= 48rem) {
+  font-size: calc(14* var(--torem));
+}
+
+}
+
+.card__date {
+  font-size: calc(11* var(--torem));
+  letter-spacing: 0.03em;
+  flex-shrink: 0;
+  @media(width >= 48rem) {
+  font-size: calc(14* var(--torem));
+  
+}
+}
+
+.card__title {
+font-size: calc(14* var(--torem));
+font-weight: 500;
+@media(width >= 48rem) {
+  font-size: calc(16* var(--torem));
+}
+}
+
+
+</style>

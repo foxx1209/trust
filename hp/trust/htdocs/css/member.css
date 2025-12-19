@@ -1,0 +1,207 @@
+@charset "utf-8";
+
+.nomember {
+  text-align: center;
+  font-size: 20px;
+}
+
+#member .p-sidetitle {
+  background-color: #F0F6F7;
+}
+
+.p-mv.__recruit {
+  position: relative;
+  padding: 226px 0 84px;
+  margin-top: 100px;
+  background-color: #F0F6F7;
+  z-index: 999;
+}
+.p-mv.__recruit .__title {
+  color: #303339;
+}
+
+.p-mv.__recruit .__no {
+  padding-right: 3.5em;
+  padding-bottom: 0.8em;
+  border-bottom: 1px solid;
+}
+
+.p-mv.__recruit .__ex {
+  color: #303339;
+  margin: 60px 0;
+}
+.p-mv.__recruit .__company,
+.p-mv.__recruit .__katagaki {
+  color: #898989;
+}
+.p-mv.__recruit .__name {
+  margin-top: 20px;
+}
+.p-mv.__recruit .__image {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(calc(-50% + 368px));
+  width: 736px;
+  height: 502px;
+}
+
+.p-member {
+  padding-bottom: 178px;
+  background-color: #F0F6F7;
+}
+.p-member .__detail {
+  padding: 195px 100px 32px;
+  margin-bottom: 178px;
+  background-color: #fff;
+}
+.p-member .__detail > * {
+  margin-bottom: 60px;
+}
+
+.p-member .c-dl__05 > dt.__time.__0800::before {
+  background: no-repeat center / contain url(../img/icon-time-0800.svg);
+}
+.p-member .c-dl__05 > dt.__time.__0915::before {
+  background: no-repeat center / contain url(../img/icon-time-0915.svg);
+}
+.p-member .c-dl__05 > dt.__time.__0930::before {
+  background: no-repeat center / contain url(../img/icon-time-0930.svg);
+}
+.p-member .c-dl__05 > dt.__time.__1000::before {
+  background: no-repeat center / contain url(../img/icon-time-1000.svg);
+}
+.p-member .c-dl__05 > dt.__time.__1100::before {
+  background: no-repeat center / contain url(../img/icon-time-1100.svg);
+}
+.p-member .c-dl__05 > dt.__time.__1200::before {
+  background: no-repeat center / contain url(../img/icon-time-1200.svg);
+}
+.p-member .c-dl__05 > dt.__time.__1800::before {
+  background: no-repeat center / contain url(../img/icon-time-1800.svg);
+}
+.p-member .c-dl__05 > dt.__time.__1830::before {
+  background: no-repeat center / contain url(../img/icon-time-1830.svg);
+}
+.p-member .c-dl__05 > dt.__time.__1900::before {
+  background: no-repeat center / contain url(../img/icon-time-1900.svg);
+}
+.p-member .c-dl__05 > dt.__time.__1930::before {
+  background: no-repeat center / contain url(../img/icon-time-1930.svg);
+}
+
+.p-member .__other > ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  height: 290px;
+}
+.p-member .__other > ul > li {
+  position: relative;
+  width: calc(100% / 2);
+  height: inherit;
+}
+
+.p-member .__other > ul > li > .c-btn__01 {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+.p-member .__other > ul > li > .c-btn__01::before {
+  right: 2em;
+  bottom: 2em;
+  border-color: #fff;
+}
+.p-member .__other > ul > li > .c-btn__01::after {
+  right: 2em;
+  bottom: 2em;
+  border-color: #fff;
+}
+
+.p-member .__other > ul > li .__image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+.p-member .__other > ul > li .__image::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .3);
+  z-index: 1;
+}
+.p-member .__other > ul > li .__info {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  color: #fff;
+  width: auto;
+  height: auto;
+  z-index: 9;
+}
+.p-member .__other > ul > li .__info .__ex {
+  font-size: 14px;
+  letter-spacing: 2px;
+  line-height: 1.5;
+  margin-bottom: 0.5em;
+}
+.p-member .__other > ul > li .__info .__katagaki {
+  font-size: 11px;
+  margin-bottom: 0.5em;
+}
+.p-member .__other > ul > li .__info .__name {
+  font-weight: 600;
+}
+
+
+@media screen and (max-width: 1023px) {
+
+  #member .p-sidetitle {
+    display: none;
+  }
+
+  .p-mv.__recruit {
+    padding: 46px 0 90px;
+    margin-top: 74px;
+  }
+
+  .p-mv.__recruit .__ex {
+    margin: 24px 0;
+  }
+
+  .p-mv.__recruit .__image {
+    top: auto;
+    left: 32px;
+    bottom: -260px;
+    transform: none;
+    width: 342px;
+    height: auto;
+  }
+
+  .p-member {
+    padding-bottom: 100px;
+    background-color: #fff;
+  }
+  .p-member .__detail {
+    padding: 195px 0 0;
+  }
+
+  .p-member .__other > ul {
+    flex-wrap: wrap;
+    height: 580px;
+  }
+  .p-member .__other > ul > li {
+    width: 100%;
+    height: 290px;
+  }
+
+}

@@ -1,0 +1,87 @@
+---
+import "@styles/global.css";
+import { Image } from "astro:assets";
+import GlobalFooter from "@components/GlobalFooter.astro";
+import GlobalHeader from "@components/GlobalHeader.astro";
+import Favicon from "../assets/images/favicon.ico";
+import Favicon2 from "../assets/images/apple-touch-icon.png";
+import Ogp from "../assets/images/ogp.jpg";
+
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="ja" data-script-disabled>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description}  />
+    <meta property="og:image" content={Ogp.src} />
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description}/>
+    <meta property="twitter:image" content={Ogp.src} />
+    <link rel="icon" href={Favicon} />
+    <link rel="apple-touch-icon" href={Favicon2.src} sizes="180x180"/>
+    
+    <!-- フォント -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.typekit.net/srs2mtr.css">
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" defer></script>
+    <meta name="robots" content="noindex,nofollow" />
+
+
+
+
+  </head>
+  <body class="body">
+    <GlobalHeader />
+    <main class="main">  
+      <slot />
+    </main>
+    <GlobalFooter />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" is:inline></script>
+     <script is:inline>
+      document.addEventListener('DOMContentLoaded', function() {
+        AOS.init();
+      });
+    </script>
+  </body>
+</html>
+
+<script>
+    (function () {
+    const viewport = document.querySelector('meta[name="viewport"]');
+    function switchViewport() {
+      const value = window.outerWidth > 375 ? "width=device-width,initial-scale=1" : "width=375";
+      if (viewport?.getAttribute("content") !== value) {
+        viewport?.setAttribute("content", value);
+      }
+    }
+    addEventListener("resize", switchViewport, false);
+    switchViewport();
+    
+  })();
+ </script>  
+ 
+        
+</script>
+
+
+
+

@@ -1,0 +1,362 @@
+@charset "utf-8";
+
+.p-contact {
+  padding-top: 100px;
+  background-color: #F0F6F7;
+}
+
+#contact .__head {
+  padding: 60px 0 48px;
+}
+#contact .__head > h2 {
+  line-height: 0;
+}
+#contact .__head > p {
+  font-size: 15px;
+}
+
+
+
+
+#contact .__head .c-description__31 {
+  text-align: center;
+}
+#contact .__body {
+  padding: 50px 100px;
+  background-color: #fff;
+}
+
+h3.__title {
+  margin-bottom: 1em;
+}
+.p-newentry {
+  margin-top: 80px;
+}
+
+
+/* メール送信部分 */
+.p-form {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.p-form dt,
+.p-form dd {
+  font-size: 17px;
+  padding: 3em 0 3em;
+  border-top: 1px solid #CCCCCC;
+}
+.p-form dt {
+  height: 8em;
+  padding: 3.5em 0 3em;
+}
+.p-form .c-lang-wrap > span {
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.p-form dt:nth-of-type(1),
+.p-form dd:nth-of-type(1) {
+  border-top: none;
+}
+.p-form dt {
+  width: 30%;
+}
+.p-form dt > span {
+  /* display: block; */
+  width: 90%;
+}
+.p-form dt > span.__hissu.__jp::after {
+  content: '必須';
+}
+.p-form dt > span.__hissu.__en::after {
+  content: 'Required';
+}
+.p-form dt > span.__hissu.__jp::after,
+.p-form dt > span.__hissu.__en::after {
+  background-color: #7BCC48;
+}
+
+.p-form dt > span.__nini.__jp::after {
+  content: '任意';
+  background-color: #CCCCCC;
+}
+.p-form dt > span.__nini.__en::after {
+  content: '';
+  display: none;
+}
+
+.p-form dt > span.__hissu::after,
+.p-form dt > span.__nini::after {
+  position: absolute;
+  top: 50%;
+  right: 1em;
+  transform: translateY(-50%);
+  font-size: 12px;
+  color: #fff;
+  letter-spacing: 1px;
+  padding: 0.25em 0.5em;
+  border-radius: 4px;
+}
+.p-form dt > span.__jidou {
+  display: inline-block;
+  position: relative;
+}
+.p-form dt > span.__jidou::after {
+  content: '※自動入力';
+  font-size: 12px;
+  margin-left: 1em;
+}
+.p-form dt.__yubin > span:nth-of-type(2) {
+  margin-left: 2em;
+}
+
+.p-form dd {
+  width: 70%;
+  height: 8em;
+}
+.p-form dd.__long {
+  height: auto;
+}
+.p-form dd * {
+  width: 100%;
+}
+.p-form dd > select,
+.p-form dd > input,
+.p-form dd > textarea {
+  padding: 0.5em 1em;
+  border-radius: 8px;
+  background-color: #EFEFEF;
+}
+.p-form dd > input {
+  top: 50%;
+  transform: translateY(-50%);
+  height: 2em;
+}
+body.__lang-jp .p-form dd > input.__jp {
+  display: block;
+}
+body.__lang-jp .p-form dd > input.__en {
+  display: none;
+}
+body.__lang-en .p-form dd > input.__jp {
+  display: none;
+}
+body.__lang-en .p-form dd > input.__en {
+  display: block;
+}
+
+
+.p-form dd > select {
+  position: relative;
+}
+.p-form dd > select::after {
+  content: "▼";
+  position: absolute;
+  top: 50%;
+  right: 1em;
+  transform: translateY(-50%);
+  width: 1em;
+  height: 1em;
+}
+
+.p-form dd > select {
+  width: 200px;
+}
+.p-form dd > select.__year {
+  width: 150px;
+}
+.p-form dd > select.__month,
+.p-form dd > select.__day {
+  width: 100px;
+}
+.p-form dd > span {
+  font-size: 14px;
+  margin-right: 1em;
+}
+
+
+.p-form dd > input {
+  width: 300px;
+}
+.p-form dd > textarea {
+  resize: none;
+}
+
+.p-form dd.__check {
+  background-color: #fff;
+}
+.p-form dd.__check ul {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.p-form dd.__check ul li {
+  width: fit-content;
+  width: -moz-fit-content;
+  margin-right: 1em;
+}
+.p-form dd.__check li input {
+  width: 17px;
+}
+.p-form dd.__check li label {
+  margin-right: 1em;
+}
+
+
+.p-form dd.__yubin,
+.p-form dd.__ken {
+  display: inline-block;
+  width: 120px;
+}
+.p-form dd.__ken {
+  margin-left: 2.5em;
+}
+
+.p-contact .__agreement {
+  padding-top: 24px;
+  border-top: 1px solid #CCCCCC;
+  margin-bottom: 4em;
+}
+.p-contact .__agreement h4 {
+  font-size: 20px;
+  text-align: center;
+  height: 1em;
+  margin-bottom: 20px;
+}
+.p-contact .__agreement > .__content {
+  font-size: 12px;
+  line-height: 1.5;
+  width: 100%;
+  height: 120px;
+  padding: 0.5em;
+  border: 2px solid;
+  overflow-y: scroll;
+  margin-bottom: 20px;
+}
+
+.p-contact .__agreement label {
+  margin-left: 1em;
+  font-size: 15px;
+}
+
+.p-contact .__agreement > .__check-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: max-content;
+  margin: 0 auto;
+}
+.p-contact .__agreement > .__check-wrap > label {
+  height: 1em;
+  width: 260px;
+}
+.p-contact .__agreement > .__check-wrap > label .c-lang-wrap .__jp {
+  width: 260px;
+}
+.p-contact .__agreement > .__check-wrap > label .c-lang-wrap .__en {
+  width: 400px;
+}
+
+.form-btn > p {
+  width: max-content;
+  height: 6em;
+  margin: 0 auto;
+}
+.form-btn input {
+  font-size: 17px;
+  color: #fff;
+  letter-spacing: 1px;
+  padding: 1em 3em;
+  background-color: #006591;
+}
+
+p.__message {
+  padding-top: 2em;
+}
+
+@media screen and (max-width: 1023px) {
+
+  #contact .__body {
+    padding: 5%;
+  }
+
+  .p-contact {
+    padding-top: 74px;
+  }
+
+  #contact .__head {
+    padding: 30px 0 24px;
+  }
+  
+  
+  .p-contact .__body {
+    min-width: 310px;
+    padding: 40px 20px;
+  }
+  
+  .p-form dt,
+  .p-form dd {
+    width: 90%;
+    height: 4em;
+    padding: 0;
+    margin: 0 auto;
+  }
+  .p-form dt {
+    height: 3em;
+  }
+  .p-form dt.c-lang-wrap > span {
+    align-items: flex-end;
+  }
+
+  .p-form dd.__long {
+    height: 20em;
+    margin-top: 1em;
+  }
+  .p-form dt > span {
+    width: 100%;
+  }
+  .p-form dt > span.__hissu::after, .p-form dt > span.__nini::after {
+    right: 0;
+  }
+  .p-form dt > span.__hissu.__jp::after, .p-form dt > span.__hissu.__en::after {
+    top: auto;
+    bottom: 0;
+    transform: none;
+  }
+  .p-form dd {
+    border-top: none;
+    margin-bottom: 1em;
+  }
+  .p-form dd > input {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .p-form dd > select.__year {
+    margin-bottom: 1.5em;
+  }
+
+  .p-contact .__agreement h4 {
+    height: 2em;
+  }
+  
+  .p-form dd > select.__month, .p-form dd > select.__day {
+    width: 80px;
+  }
+
+  p.__message {
+    font-size: 13px;
+    letter-spacing: 1px;
+    padding-bottom: 1em;
+  }
+  
+  .p-contact .__agreement > .__check-wrap > label .c-lang-wrap .__en {
+    width: auto;
+  }
+  
+
+
+}

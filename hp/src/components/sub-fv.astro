@@ -1,0 +1,120 @@
+---
+const {title,titleEn} = Astro.props;
+const {
+  sp = false,
+  pc = false,
+  margin = false,
+} = Astro.props;
+
+---
+
+<div class="fv" class:list={[
+  {"margin-none": margin}
+]}>
+  <div class="fv__inner">
+    <hgroup class="fv__title-wrapper">
+      <p class="fv__titleEn">{titleEn}</p>
+      <h1 
+        class:list={[
+          "fv__title",
+          {"sp-only": sp,
+           "pc-only": pc}
+        ]}
+        set:html={title}
+      >
+      </h1>
+    </hgroup>
+  </div>
+</div>
+
+<style>
+.fv {
+background: url("../assets/images/sub-fv-sp.webp") no-repeat center;
+inline-size: 100%;
+background-size: cover;
+block-size: calc(626* var(--torem));
+@media(width >= 48rem) {
+  
+  /* block-size: calc(450* var(--torem)); */
+  block-size: calc(450 / 1440 * 100vw);
+  max-height: calc(450* var(--torem));
+  min-height: calc(350* var(--torem));
+  background:url("../assets/images/sub-fv.webp") no-repeat center;
+  background-size: contain;
+  margin-bottom: calc(63* var(--torem));
+}
+}
+.fv.margin-none{
+  margin-block-end:0;
+}
+
+.fv__inner {
+padding:0 calc(10* var(--torem));
+@media(width >= 48rem) {
+  padding: 0 fluid(50px 100px);
+
+}
+}
+
+.fv__title-wrapper {
+display: grid;
+max-inline-size: calc(1244* var(--torem));
+inline-size: 100%;
+margin-inline: auto;
+padding-block-start: calc(174* var(--torem));
+@media(width >= 48rem) {
+padding-block-start: fluid(100px 174px);
+}
+
+}
+
+.fv__titleEn{
+background: linear-gradient(86.82deg, #20377A 4.26%, #2C85C5 92.99%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+text-fill-color: transparent;
+display: flex;
+inline-size: fit-content;
+align-items: center;
+gap: calc(5* var(--torem));
+font-size: calc(26* var(--torem));
+font-family: var(--font-en);
+font-weight: 700;
+@media(width >= 48rem) {
+  font-size: calc(30* var(--torem));
+
+}
+  }
+  .fv__titleEn::before{
+    content: "";
+    display: block;
+    background: url("../assets/images/srcle.webp") no-repeat center / contain;
+    inline-size: calc(12* var(--torem));
+    block-size: calc(12* var(--torem));
+    
+  }
+
+.fv__title {
+font-size: calc(40* var(--torem));
+font-weight: 700;
+letter-spacing: 0.1em;
+@media(width >= 48rem) {
+  font-size: calc(52* var(--torem));
+}
+}
+
+:global(.fv__title.sp-only br) {
+  display: block;
+  @media(width >= 48rem) {
+    display: none;
+  }
+}
+
+@media(max-width: 765px) {
+  .p-tag__title{
+    font-size: 15px;
+  }
+}
+
+</style>

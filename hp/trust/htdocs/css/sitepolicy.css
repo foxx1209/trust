@@ -1,0 +1,13 @@
+@charset "utf-8";
+
+.islogowhite { display: none; }
+.islogoblack { display: block; }
+.nav-link { color: #000; }
+
+#sitepolicy {
+  padding-top: 100px;
+}
+
+.p-sitepolicy__contents {
+  padding: 50px 0;
+}

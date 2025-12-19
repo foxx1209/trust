@@ -1,0 +1,25 @@
+@charset "utf-8";
+
+.islogowhite { display: none; }
+.islogoblack { display: block; }
+.nav-link { color: #000; }
+
+#privacypolicy {
+  padding-top: 100px;
+}
+
+.p-privacypolicy__head p {
+  padding-bottom: 30px;
+}
+
+.p-privacypolicy__contents {
+  padding-bottom: 50px;
+}
+
+.p-privacypolicy__contents > ul > li {
+  padding-top: 30px;
+}
+
+.p-privacypolicy__contents > ul > li > p,ul,ol,address {
+  color: #000;
+}

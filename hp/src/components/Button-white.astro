@@ -1,0 +1,76 @@
+---
+
+const {link,label} = Astro.props;
+
+const baseUrl = import.meta.env.BASE_URL;
+// 絶対パス（/で始まる）の場合、baseUrlを追加
+const href = link?.startsWith('/') ? `${baseUrl}${link.slice(1)}` : link || baseUrl;
+---
+
+<a
+  class="btn-white"
+  href={href}>
+<p class="btn-white__text">{label}</p>
+</a>
+
+<style>
+  .btn-white{
+     inline-size: calc(300* var(--torem));
+   border-radius: 40px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
+   gap: calc(15* var(--torem));
+   padding: calc(12* var(--torem));
+   text-decoration: none;
+   letter-spacing: 0.1em;
+   transition: all 0.3s ease;
+   position: relative;
+   background: var(--white);
+   transition: all 0.3s ease;
+   position: relative;
+   @media(width >= 48rem) {
+          max-inline-size: calc(257* var(--torem));
+          inline-size: 100%;
+
+   }
+  
+  }
+  @media (any-hover: hover) {
+
+  .btn-white:hover{
+    opacity: 0.7;
+   }  
+  }
+   .btn-white__text{
+    background: linear-gradient(86.82deg, #20377A 4.26%, #2C85C5 92.99%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+     font-size: calc(18* var(--torem));
+   font-weight: 500;
+   
+   }
+  
+   
+   .btn-white::after{
+    background: url("../assets/images/btn-arrow-blue.webp") no-repeat center center / contain;
+    content: "";
+    display: block;
+    inline-size: calc(35* var(--torem));
+    block-size: calc(35* var(--torem));
+    position: absolute;
+    right: calc(20* var(--torem));
+    top: 50%;
+    transform: translateY(-50%);
+    @media(width >= 48rem) {
+      position: static;
+      transform: none;
+      top: auto;
+      right: auto;
+      /* margin-block-start: calc(20* var(--torem)); */
+    }
+  }
+</style>

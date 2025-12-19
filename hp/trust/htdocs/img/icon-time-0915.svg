@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19">
+  <g id="グループ_143" data-name="グループ 143" transform="translate(-332.207 -3790)">
+    <g id="楕円形_19" data-name="楕円形 19" transform="translate(332.207 3790)" fill="#f0f6f7" stroke="#006591" stroke-width="1">
+      <circle cx="9.5" cy="9.5" r="9.5" stroke="none"/>
+      <circle cx="9.5" cy="9.5" r="9" fill="none"/>
+    </g>
+    <line id="線_27" data-name="線 27" x1="3.75" y2="2.174" transform="translate(338.087 3797.5) rotate(30)" fill="none" stroke="#006591" stroke-width="1"/>
+    <path id="パス_48" data-name="パス 48" d="M0,0V7" transform="translate(348 3799.5) rotate(90)" fill="none" stroke="#006591" stroke-width="1"/>
+  </g>
+</svg>

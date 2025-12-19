@@ -1,0 +1,122 @@
+---
+const { title,img,subTitle,text,alt} = Astro.props;
+import { Image } from 'astro:assets';
+const {
+  sp = false,
+} = Astro.props;
+---
+<div class="section">
+  <h2 class="section__title" class:list={{
+    'section__title--sp': sp,
+  }} set:html={title}></h2>
+  <div class="section-wrapper">
+    <figure class="section__header-img">
+    <Image src={img} alt={alt} />
+    </figure>
+    <div class="section__textarea">
+      <h3 class="section__sub-title" set:html={subTitle}></h3>
+      <p class="section__text">{text}</p>
+    </div>
+  </div>
+
+</div>
+<style>
+
+ .section::before {
+    content: "";
+    background: url("../assets/images/bg.webp") no-repeat center / cover;
+    border-radius: 20px;
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+  }
+  .section{
+    inline-size: 100%;
+    block-size: 100%;
+background: linear-gradient(86.82deg, #20377A 4.26%, #2C85C5 92.99%);
+    box-shadow: 2px 4px 15px rgba(0, 0, 0, 0.05);
+    border-radius: 20px 20px 0px 0px;
+    position: relative;
+    padding-inline: calc(20* var(--torem));
+    z-index: 1;
+    padding-block-start: calc(20* var(--torem));
+    padding-block-end: calc(40* var(--torem));
+    @media(width >= 48rem) {
+      padding-block-start: calc(40* var(--torem));
+      padding-block-end: calc(230* var(--torem));
+    }
+  }
+
+
+  
+.section__title {
+text-align: center;
+font-size: calc(30* var(--torem));
+color: #fff;
+font-weight: 700;
+letter-spacing: 0.1em;
+@media(width >= 48rem) {
+  font-size: calc(34* var(--torem));
+}
+}
+
+.section-wrapper {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+max-inline-size: calc(1000* var(--torem));
+inline-size: 100%;
+margin-inline: auto;
+margin-block-start: calc(30* var(--torem));
+@media(width >= 48rem) {
+  flex-direction: row;
+  gap: calc(50* var(--torem));
+  margin-block-start: calc(72* var(--torem));
+}
+}
+
+.section__header-img {
+max-inline-size: calc(352* var(--torem));
+inline-size: 100%;
+flex-shrink: 0;
+img{
+aspect-ratio: 352 / 200;
+inline-size: 100%;
+block-size: 100%;
+object-fit: cover;
+
+}
+}
+
+.section__textarea {
+display: grid;
+gap: calc(25* var(--torem));
+margin-block-start:calc(20* var(--torem));
+@media(width >= 48rem) {
+  margin-block-start:0;
+  
+}
+
+}
+
+.section__sub-title {
+color: var(--white);
+font-size: calc(20* var(--torem));
+font-weight: 700;
+letter-spacing: 0.1em;
+@media(width >= 48rem) {
+  font-size: calc(24* var(--torem));
+}
+}
+
+.section__text {
+font-size: calc(16* var(--torem));
+color: var(--white);
+line-height: 2.5;
+font-weight: 500;
+
+}
+
+
+</style>

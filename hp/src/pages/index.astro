@@ -1,0 +1,756 @@
+---
+// Config
+// import { SITE } from "@src/config";
+import { Image } from 'astro:assets';
+import FV from "@components/FV.astro";
+import Service from "../assets/images/service.png";
+import ServiceBg from "../assets/images/service-bg.png";
+import Support from "../assets/images/support-img.jpg";
+import Support2 from "../assets/images/support-img2.jpg";
+import SupportBg from "../assets/images/support-bg1.png";
+import Company from "../assets/images/company.png";
+import Close from "@components/Close.astro";
+// Layout
+import Layout from "@layouts//Layout.astro";
+import Title from "@components/title.astro";
+import TitleEn from "@components/titleEn.astro";
+import Btn from "@components/Button.astro";
+import CardCl from "@components/CardCl.astro";
+
+
+---
+
+<Layout title="トップページ" description="ページの紹介文">
+  <FV />
+<section class="serive" data-aos="fade-up" data-aos-duration="3000">
+  <div class="service__inner">
+    <div class="service__content">
+      <div class="service__textarea">
+        <hgroup class="">
+          <TitleEn title="Service" />
+          <h2 class="service__title">BtoBマーケティングを<br class="u-sp">次のステージへ。<br><span class="service__title-big">AI活用で、<span class="service__title-blue">より確実に</span>。</span></h2>
+        </hgroup>
+        <p class="p-serice__text">TrustLinkはBtoBマーケティングを科学的に支援する専門家チームです。 豊富な経験に基づく戦略立案と、AIを活用したデータ分析により、再現性のある成果を追求。 リード獲得から商談化までのプロセスを最適化し、御社のビジネス成長を着実に加速いたします。豊富な実績とAI活用を軸に、BtoB企業の成長に必要な要素をワンストップで提供し、確かな成果を実現します。</p>
+        <div class="service__bg">
+          <Image src={ServiceBg} alt="AI活用で、より確実に。" />
+        </div>
+      </div>
+      <div class="service__img">
+        <Image src={Service} alt="AI活用で、より確実に。" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="support" data-aos="fade-up" data-aos-duration="3000">
+  <div class="support__inner">
+    <div class="support__content">
+     <hgroup class="title title--row">
+      <TitleEn title="Support" />
+      <Title title="支援内容" />
+    </hgroup> 
+    <div class="support__cards">
+      <div class="support__card">
+        <figure class="supoort__img">
+          <Image src={Support} alt="BtoBマーケティング支援" />
+        </figure>
+        <h3 class="support__title">BtoBマーケティング支援</h3>
+        <ul class="support__list">
+          <li class="support__item">・BtoB特化WEB広告運用</li>
+          <li class="support__item">・インサイドセールス支援</li>
+          <li class="support__item">・HubSpot導入支援 </li>
+        </ul>
+         <div class="support__btn">
+          <Btn link="/btob" label="詳しく見る" small />
+        </div>
+       </div>
+      <div class="support__card">
+        <figure class="supoort__img">
+          <Image src={Support2} alt="BtoBマーケティング支援" />
+        </figure>
+        <h3 class="support__title">生成AIソリューション支援</h3>
+        <ul class="support__list">
+          <li class="support__item">・AIリサーチ・データ分析支援</li>
+          <li class="support__item">・AIコンテンツ作成支援援</li>
+        </ul>
+        <div class="support__btn">
+          <Btn link="/ai" label="詳しく見る" small />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="support__bg">
+  <Image src={SupportBg} alt="BtoBマーケティング支援" />
+</div> 
+<div class="support__bg2">
+  <Image src={SupportBg} alt="BtoBマーケティング支援" />
+</div>
+<div class="support__bg3">
+  <Image src={SupportBg} alt="BtoBマーケティング支援" />
+</div> 
+<div class="support__bg4">
+  <Image src={SupportBg} alt="BtoBマーケティング支援" />
+</div>
+</section>
+
+<section class="column" data-aos="fade-up" data-aos-duration="3000">
+  <div class="column__inner">
+<hgroup class="title column__title">
+<TitleEn title="Column" />
+<Title title="コラム" />
+</hgroup> 
+<p class="p-column__text">BtoBマーケティングの成果向上に役立つノウハウや最新情報をお届けしています。</p>
+   <div class="column__cards">
+      <CardCl />
+      <CardCl />
+      <CardCl />
+    </div>
+    <div class="column__btn">
+      <Btn link="/column" label="コラム一覧を見る" large />
+    </div>
+  </div>
+</section>
+<section class="campany" data-aos="fade-up" data-aos-duration="3000">
+  <div class="company__inner">
+    <div class="company__content">
+      <div class="company__left">
+        <hgroup class="title company__title">
+          <TitleEn title="COMPANY" />
+          <Title title="会社概要" />
+        </hgroup>
+        <div class="company__texterea">
+          <p class="p-company__text">TrustLinkはBtoBマーケティングを科学的に支援する専門家チームです。 豊富な経験に基づく戦略立案と、AIを活用したデータ分析により、再現性のある成果を追求。 リード獲得から商談化までのプロセスを最適化し、御社のビジネス成長を着実に加速いたします。豊富な実績とAI活用を軸に、BtoB企業の成長に必要な要素をワンストップで提供し、確かな成果を実現します。</p>
+        </div>
+      </div>
+      <div class="company__right">
+        <div class="company__img">
+          <Image src={Company} alt="会社概要" />
+        </div>
+        <div class="company__link">
+          <Btn link="/company" label="詳しく見る" small />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <Close />
+</Layout>
+
+
+<style> 
+.title{
+  display: grid;
+  gap: calc(5* var(--torem));
+  place-items: center;
+  inline-size: fit-content;
+  gap: calc(5* var(--torem));
+  @media(width >= 48rem) {
+    gap: calc(10* var(--torem));
+  }
+}
+.title--row{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: calc(5* var(--torem));
+  @media(width >= 48rem) {
+    flex-direction: row;
+    gap: calc(35* var(--torem));
+  }
+}
+
+
+.section-cards{
+  display: grid;
+  background-color: #e6e9ee;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  max-inline-size: calc(1320* var(--torem));
+  inline-size: 100%;
+  margin-left: auto;
+  position: relative;
+  z-index: 1;
+  padding-inline-start: calc(15* var(--torem));
+  padding-inline-end: calc(15* var(--torem));
+  @media(width >= 48rem) {
+      margin-block-start: calc(-153* var(--torem));
+padding-inline-start: fluid( 30px 58px);
+  padding-inline-end: fluid( 20px 60px);
+  }
+}
+ 
+.card-content__text + span{
+background: linear-gradient(86.82deg, #20377A 4.26%, #2C85C5 92.99%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+text-fill-color: transparent;
+}
+
+/* service */
+
+.serive {
+padding-block-start:calc(76* var(--torem));
+@media(width >= 48rem) {
+  padding-block-start:0;
+
+}
+
+}
+
+.service__inner {
+padding: 0 calc(20* var(--torem));
+}
+
+.service__content {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: space-between;
+position: relative;
+max-inline-size: calc(1200* var(--torem));
+inline-size: 100%;
+margin-inline: auto;
+gap: calc(14* var(--torem));
+@media(width >= 969px) {
+  align-items: flex-end;
+  flex-direction: row;
+  gap:0;
+  
+}
+}
+
+
+.service__textarea {
+  display: contents;
+@media(width >= 969px) {
+  display: block;
+  
+}
+}
+.service__bg{
+  position: absolute;
+  bottom: -15px;
+  right: -8px;
+  z-index: -1;
+  max-inline-size: calc(371* var(--torem));
+  inline-size: 100%;
+  img{
+    aspect-ratio: 371 / 149;
+    inline-size: 100%;
+    object-fit: contain;
+    block-size: 100%;
+  }
+@media(width >= 969px) {
+    max-inline-size: calc(636* var(--torem));
+    left: 0;
+    bottom: -35px;
+    img{
+      aspect-ratio: 636 / 256;
+      object-fit: contain;
+    }
+  }
+}
+
+.service__title {
+font-size: calc(22* var(--torem));
+font-weight: 700;
+letter-spacing: 0.1em;
+@media(width >= 969px) {
+  font-size: calc(32* var(--torem));
+
+}
+
+}
+
+.service__title-big {
+  font-size: calc(28* var(--torem));
+  margin-top: calc(10* var(--torem));
+@media(width >= 969px) {
+    font-size: calc(42* var(--torem));
+  }
+}
+
+.service__title-blue {
+background: linear-gradient(86.82deg, #20377A 4.26%, #2C85C5 92.99%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+text-fill-color: transparent;
+inline-size: fit-content;
+}
+
+.p-serice__text {
+font-size: calc(14* var(--torem));
+margin-block-start: calc(10* var(--torem));
+max-inline-size: calc(540* var(--torem));
+inline-size: 100%;
+line-height: 2.5;
+order: 3;
+letter-spacing: 0.1em;
+@media(width >= 969px) {
+  order: initial;
+  margin-block-start: calc(47* var(--torem));
+  font-size: calc(16* var(--torem));
+/* background: url("../assets/images/service-bg.png") no-repeat  center; */
+
+
+}
+
+}
+
+.service__img {
+max-inline-size: calc(300 / 375 * 100vw);
+inline-size: 100%;
+img{
+  aspect-ratio: 300 /176 ;
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+}
+@media(width >= 48rem) {
+  max-inline-size: calc(540* var(--torem));
+
+} 
+img{
+  aspect-ratio: 540 /318 ;
+}
+}
+
+/* suport */
+.support {
+padding-block-start: calc(90* var(--torem));
+padding-block-end: calc(80* var(--torem));
+position: relative;
+overflow-x: hidden;
+@media(width >= 48rem) {
+  padding-block-start: calc(140* var(--torem));
+  
+}
+}
+
+.support__inner {
+  @media(width >= 48rem) {
+  padding-right: calc(20* var(--torem));
+  
+}
+}
+
+.support__content {
+background: #E6E9EE;
+inline-size: 100%;
+border-radius:calc(20* var(--torem));
+max-inline-size:calc(1200* var(--torem));
+margin-inline: auto;
+gap: calc(40* var(--torem));
+padding-block-start: calc(40* var(--torem));
+padding-block-end: calc(30* var(--torem));
+padding-inline: calc(20* var(--torem));
+position: relative;
+box-shadow: 10px 4px 15px rgba(0, 0, 0, 0.05);
+
+@media(width >= 48rem) {
+  padding-inline-end: fluid( 60px 120px);
+  padding-inline-start: calc(20* var(--torem));
+  padding-block-start: calc(40* var(--torem));
+  padding-block-end: calc(40* var(--torem));
+  border-top-right-radius: 20px;
+border-bottom-right-radius: 20px;
+}
+}
+.support__content::before{
+  content: "";
+  display: block;
+  max-inline-size: calc(2300* var(--torem));
+  inline-size: 100vw;
+  block-size: 100%;
+  background: #E6E9EE;
+  left: -100%;
+  position: absolute;
+  top:50%;
+  z-index: -1;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  transform: translateY(-50%);
+} 
+
+
+.support__content::after{
+  content: "";
+  /* min-inline-size: calc(1195* var(--torem)); */
+  block-size: 100%;
+  inline-size: 100%;
+  background: linear-gradient(86.82deg, #20377A 4.26%, #2C85C5 92.99%);
+  opacity: 0.8;
+  box-shadow: 2px 4px 15px rgba(0, 0, 0, 0.05);
+  border-radius: 20px;
+  position: absolute;
+  right: 0;
+  top:calc(35* var(--torem));
+  z-index: -2;
+  @media(width >= 48rem) {
+right: calc(-50* var(--torem));
+  min-inline-size: calc(1195* var(--torem));
+
+  }
+}
+
+
+.support__cards {
+display: grid;
+/* max-inline-size: calc(935* var(--torem)); */
+inline-size: 100%;
+margin-inline: auto;
+gap: calc(40* var(--torem));
+margin-block-start: calc(40* var(--torem));
+
+@media(width >= 48rem) {
+  grid-template-columns: repeat(2,1fr);
+    gap: fluid(20px 120px);
+
+}
+}
+
+.support__card {
+margin-inline: auto;
+display: grid;
+grid-row: span 4;
+gap: 0;
+max-inline-size: calc(400* var(--torem));
+inline-size: 100%;
+grid-template-columns: subgrid;
+
+}
+
+.supoort__img {
+  max-inline-size: calc(500* var(--torem));
+  inline-size: 100%;
+  margin-inline: auto;
+img{
+  border-radius: 20px;
+  aspect-ratio: 355 / 211;
+}
+}
+
+.support__title {
+font-size: calc(20* var(--torem));
+font-weight: 700;
+letter-spacing: 0.1em;
+text-align: center;
+display: flex;
+align-items: center;
+justify-content: center;
+margin-block-start: calc(15* var(--torem));
+gap: calc(5* var(--torem));
+@media(width >= 48rem) {
+  /* font-size: calc(28* var(--torem)); */
+  font-size: calc(32* var(--torem));
+  margin-block-start: calc(20* var(--torem));
+}
+}
+.support__title::before {
+  content: "";
+  display: block;
+  flex-shrink: 0;
+  inline-size: calc(25* var(--torem));
+  block-size: calc(25* var(--torem));
+  background: url("../assets/images/support-title.png") no-repeat center;
+  background-size: contain;
+}
+.support__card:nth-child(2) .support__title::before{
+content: "";
+  display: block;
+  inline-size: calc(25* var(--torem));
+  block-size: calc(25* var(--torem));
+  background: url("../assets/images/support-title2.png") no-repeat center;
+  background-size: contain;
+}
+.support__list {
+margin-top: calc(15* var(--torem));
+display: grid;
+gap: calc(5* var(--torem));
+margin-inline: auto;
+inline-size: fit-content;
+@media(width >= 48rem) {
+  margin-top: calc(20* var(--torem));
+}
+}
+
+.support__item {
+  font-size: calc(16* var(--torem));
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  @media(width >= 48rem) {
+    font-size: calc(20* var(--torem));
+  }
+}
+.support__btn{
+  margin-top: calc(25* var(--torem));
+  margin-inline: auto;
+  text-align: center;
+  display: grid;
+  place-items: center;
+  @media(width >= 48rem) {
+    margin-top: calc(65* var(--torem));
+  }
+}
+.support__bg {
+max-inline-size: calc(375* var(--torem));
+inline-size: 100%;
+position: absolute;
+transform: translateY(50%);
+top: calc(57* var(--torem));
+left: 0;
+@media(width >= 48rem) {
+  max-inline-size: calc(623* var(--torem));
+left: initial;
+  top:calc(38* var(--torem));
+  right: calc(50% + 90px);
+
+}
+}
+
+.support__bg2 {
+max-inline-size: calc(375* var(--torem));
+inline-size: 100%;
+position: absolute;
+transform: translateY(50%);
+top: 32%;
+right: 0;
+img{
+  aspect-ratio: 626 / 223;
+  object-fit: contain;
+  inline-size: 100%;
+  block-size: 100%;
+}
+@media(width >= 48rem) {
+  max-inline-size: calc(626* var(--torem));
+
+  bottom: calc(317* var(--torem));
+    right: calc(50% + 90px);
+
+}
+
+}
+
+.support__bg4 {
+  display: none;
+  @media(width >= 48rem) {
+  max-inline-size: calc(594* var(--torem));
+  position: absolute;
+  transform: translateY(50%);
+  display: block;
+  bottom: calc(209* var(--torem));
+  left: calc(50% - 56px);
+}
+img{
+  aspect-ratio: 594 / 223;
+  object-fit: contain;
+  inline-size: 100%;
+  block-size: 100%;
+}
+}
+.support__bg3 {
+max-inline-size: calc(580* var(--torem));
+position: absolute;
+top: 70%;
+right: 0;
+transform: translateY(50%);
+img{
+  aspect-ratio: 580 / 223;
+  object-fit: contain;
+  inline-size: 100%;
+  block-size: 100%;
+}
+@media(width >= 48rem) {
+  top: calc(150* var(--torem));
+  left: calc(50% - 89px);
+}
+
+}
+
+.column {
+background: url("../assets/images/column-bg-sp.webp") no-repeat;
+background-size: contain;
+padding-block-start: calc(80* var(--torem));
+padding-block-end: calc(80* var(--torem));
+background-position: 50% 14%;
+@media(width >= 540px) {
+  background-size: cover;
+}
+@media(width >= 48rem) {
+  padding-block-start:calc(160* var(--torem));
+  padding-block-end:calc(180* var(--torem));
+  background: url("../assets/images/column-bg.webp") no-repeat  center;
+background-size: contain;
+}
+}
+
+.column__inner {
+padding: 0 calc(20* var(--torem));
+}
+
+
+
+.column__title {
+  margin-inline: auto;
+}
+
+.p-column__text {
+text-align: center;
+margin-top: calc(20* var(--torem));
+font-size: calc(16* var(--torem));
+font-weight: 500;
+letter-spacing: 0.1em;
+@media(width >= 48rem) {
+  margin-top: calc(10* var(--torem));
+  font-size: calc(18* var(--torem));
+}
+}
+
+.column__cards { 
+  display: grid;
+  gap: calc(20* var(--torem));
+  max-inline-size: calc(1140* var(--torem));
+  margin-inline: auto;
+  margin-block-start: calc(30* var(--torem));
+  @media(width >= 48rem) {
+    gap: fluid( 10px 40px);
+  grid-template-columns: repeat(3,1fr);
+  margin-block-start: calc(50* var(--torem));
+  }
+}
+
+.column__btn {
+display: grid;
+place-items: center;
+margin-top: calc(15* var(--torem));
+@media(width >= 48rem) {
+  margin-top: calc(45* var(--torem));
+}
+}
+
+.campany {
+background: #e6e9ee;
+border-radius: calc(10* var(--torem));
+
+margin-bottom: calc(80* var(--torem));
+@media(width >= 48rem) {
+  margin-bottom: calc(150* var(--torem));
+}
+}
+
+.company__inner {
+background: url("../assets/images/company-bg-sp.webp") no-repeat top ;
+background-size: contain;
+
+@media(width >= 48rem) {
+  background: url("../assets/images/company-bg.webp") no-repeat top;
+  background-size: cover;
+}
+}
+.company__title{
+  order: 1;
+  margin-inline: auto;
+  @media(width >= 48rem) {
+    margin-inline: initial;
+  }
+}
+
+.company__content {
+display: flex;
+flex-direction: column;
+max-inline-size: calc(925* var(--torem));
+justify-content: center;
+padding-block:calc(40* var(--torem));
+padding-inline: calc(20* var(--torem));
+@media(width >= 48rem) {
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-inline: auto;
+  gap: calc(98* var(--torem));
+}
+}
+.company__title{
+  order: 1;
+}
+
+.company__left {
+max-inline-size: calc(500* var(--torem));
+display: contents;
+@media(width >= 48rem) {
+  display: grid;
+  gap:calc(* var(--torem))
+  
+}
+}
+
+
+
+.company__texterea {
+  inline-size: 100%;
+margin-inline: auto;
+margin-top: calc(20* var(--torem));
+order: 3;
+max-inline-size: calc(400* var(--torem));
+@media(width >= 48rem) {
+  margin-top: calc(30* var(--torem));
+    max-inline-size: inherit;
+
+}
+}
+
+.p-company__text {
+letter-spacing: 0.1em;
+font-size: calc(14* var(--torem));
+line-height: 2.5;
+@media(width >= 48rem) {
+  font-size: calc(16* var(--torem));
+}
+}
+
+.company__right {
+display: contents;
+@media(width >= 48rem) {
+  display: block;
+  flex-shrink: 0;
+}
+
+}
+
+.company__img {
+inline-size: 100%;
+margin-inline: auto;
+order: 2;
+margin-block-start: calc(30* var(--torem));
+inline-size: calc(250 / 375 * 100%);
+@media(width >= 48rem) {
+  margin-inline: initial;
+  margin-block-start: 0;
+  max-inline-size: calc(285* var(--torem));
+  inline-size: 100%;
+}
+img{
+  aspect-ratio: 250 / 177;
+  object-fit: cover;
+  inline-size: 100%;
+  block-size: 100%;
+}
+}
+
+.company__link {
+  order: 3;
+  margin-inline: auto;
+margin-top: calc(20* var(--torem));
+@media(width >= 48rem) {
+  margin-top: calc(30* var(--torem));
+  margin-inline: initial;
+  margin-top: calc(40* var(--torem));
+}
+}
+
+
+</style>

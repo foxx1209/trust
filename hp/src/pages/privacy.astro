@@ -1,0 +1,107 @@
+---
+
+import Layout from "@layouts//Layout.astro";
+import SubFv from "@components//sub-fv.astro";
+import Clouse from "@components//Close.astro";
+---
+
+<Layout title=ページタイトル  description="ページの紹介文">
+<SubFv title="プライバシーポリシー" titleEn="Privacy policy" />
+<div class="privacy">
+  <div class="privacy__inner">
+    <div class="privacy__header">
+      <p class="privacy__header-text">
+        株式会社Trust Link 以下，「当社」といいます。）は，本ウェブサイト上で提供するサービス（以下,「本サービス」といいます。）における，ユーザーの個人情報の取扱いについて，以下のとおりプライバシーポリシー（以下，「本ポリシー」といいます。）を定めます。      </p>
+    </div>
+    <section class="privacy__section">
+      <h2 class="privacy__title">第1条（個人情報）</h2>
+      <p class="privacy__text">
+        本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。
+      </p>
+    </section>
+    <section class="privacy__section">
+      <h2 class="privacy__title">第2条（個人情報）</h2>
+      <p class="privacy__text">
+        本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。
+      </p>
+    </section>
+    <section class="privacy__section">
+      <h2 class="privacy__title">第3条（個人情報）</h2>
+      <p class="privacy__text">
+        本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。
+      </p>
+    </section>
+    <section class="privacy__section">
+      <h2 class="privacy__title">第4条（個人情報）</h2>
+      <p class="privacy__text">
+        本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。
+      </p>
+    </section>
+  </div>
+</div>
+<Clouse />
+</Layout>
+
+<style>
+  .privacy {
+padding-block-end:calc(70* var(--torem));
+@media(width >= 48rem) {
+  padding-block-end:calc(150* var(--torem));
+}
+}
+
+.privacy__inner {
+padding-inline:calc(20* var(--torem));
+max-inline-size: calc(1120* var(--torem));
+margin-inline: auto;
+display: grid;
+gap: calc(20* var(--torem));
+@media(width >= 48rem) {
+  gap: calc(40* var(--torem));
+}
+}
+
+.privacy__header {
+
+}
+
+.privacy__header-text {
+font-size: calc(16* var(--torem));
+font-weight: 500;
+letter-spacing: 0.1em;
+
+}
+
+.privacy__section {
+display: grid;
+gap: calc(10* var(--torem));
+}
+
+.privacy__title {
+font-size: calc(22* var(--torem));
+font-weight: 600;
+display: flex;
+align-items: center;
+gap: calc(5* var(--torem));
+@media(width >= 48rem) {
+  font-size: calc(24* var(--torem));
+}
+}
+.privacy__title::before{
+  content: "";
+  display: block;
+  background: url("../assets/images/srcle.webp") no-repeat center / contain;
+  inline-size: calc(12* var(--torem));
+  block-size: calc(12* var(--torem));
+}
+
+.privacy__text {
+font-size: calc(16* var(--torem));
+left: 1.8;
+font-weight: 500;
+letter-spacing: 0.1em;
+}
+
+
+
+</style>

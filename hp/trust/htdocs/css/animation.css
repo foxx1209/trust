@@ -1,0 +1,532 @@
+@charset "utf-8";
+
+/*========= レイアウトのためのCSS ===============*/
+
+/* p{
+  margin: 20px;
+  font-size: 20px;
+  overflow: hidden;
+} */
+
+/*========= 流れるテキスト ===============*/
+/*全共通*/
+.slide-in {
+  overflow: hidden;
+  display: inline-block;
+}
+
+.slide-in_inner {
+  display: inline-block;
+}
+
+/*左右のアニメーション*/
+.leftAnime{
+  opacity: 0;/*事前に透過0にして消しておく*/
+}
+
+.slideAnimeLeftRight {
+  animation-name:slideTextX100;
+  animation-duration:3s;
+  animation-fill-mode:forwards;
+  opacity: 0;
+}
+
+@keyframes slideTextX100 {
+  from {
+    transform: translateX(-100%); /*要素を左の枠外に移動*/
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);/*要素を元の位置に移動*/
+    opacity: 1;
+  }
+}
+
+.slideAnimeRightLeft {
+  animation-name:slideTextX-100;
+  animation-duration:3s;
+  animation-fill-mode:forwards;
+  opacity: 0;
+}
+
+@keyframes slideTextX-100 {
+  from {
+    transform: translateX(100%);/*要素を右の枠外に移動*/
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);/*要素を元の位置に移動*/
+    opacity: 1;
+  }
+}
+
+
+
+/*
+　矢印が右に移動する　矢印位置はアンダー
+*/
+.btn__01 {
+  /*矢印と下線の基点とするためrelativeを指定*/
+  position: relative;
+  /*形状*/
+  display: block;
+  text-decoration: none;
+  outline: none;
+
+  width: 100px;
+  margin: 30px 0 0 auto;
+}
+
+/*矢印と下線の形状*/
+.btn__01::before{
+  content: '';
+  /*絶対配置で下線の位置を決める*/
+  position: absolute;
+  bottom:-8px;
+  left:15%;
+  /*下線の形状*/    
+  width: 85%;
+  height: 1px;
+  background: #1BA6B2;
+  /*アニメーションの指定*/
+  transition: all .3s;
+}
+
+.btn__01::after{
+  content: '';
+  /*絶対配置で矢印の位置を決める*/
+  position: absolute;
+  bottom:-3px;
+  right:0;
+  /*矢印の形状*/    
+  width: 15px;
+  height:1px;
+  transform: rotate(35deg);
+  background: #1BA6B2;
+  /*アニメーションの指定*/
+  transition: all .3s;
+}
+
+/*hoverした際の移動*/
+.btn__01:hover::before{
+  left:20%;
+}
+
+.btn__01:hover::after{
+  right:-5%;
+}
+
+/*
+　矢印が右に移動する　矢印位置はライト
+*/
+.btn__02 {
+  /*矢印と下線の基点とするためrelativeを指定*/
+  position: relative;
+  /*形状*/
+  display: inline-block;
+  text-decoration: none;
+  outline: none;
+
+  border-bottom: 2px solid;
+  width: 300px;
+}
+
+/*矢印と下線の形状*/
+.btn__02::before,
+.btn__02::after {
+  content: '';
+  /*絶対配置で下線の位置を決める*/
+  position: absolute;
+  right:0;
+  /*下線の形状*/    
+  height: 1px;
+  background: #1BA6B2;
+  /*アニメーションの指定*/
+  transition: all .8s;
+}
+.btn__02::before {
+  top: 50%;
+  /*下線の形状*/    
+  width: 25%;
+  transform: translateY(-50%);
+}
+.btn__02::after {
+  top: 40%;
+  /*矢印の形状*/    
+  width: 15px;
+  transform: translateY(-50%) rotate(35deg);
+}
+
+/*hoverした際の移動*/
+.btn__02:hover::before { right: -10%; }
+.btn__02:hover::after { right: -10%; }
+
+
+/*===========================================
+　背景色が伸びて出現
+==========================================*/
+
+/*全共通*/
+.bgextend{
+  animation-name:bgextendAnimeBase;
+  animation-duration:3s;
+  animation-fill-mode:forwards;
+  position: relative;
+  overflow: hidden;/*　はみ出た色要素を隠す　*/
+  opacity:0;
+  display: block;
+  width: fit-content;
+  margin: 10px auto;
+}
+
+@keyframes bgextendAnimeBase{
+  from {
+    opacity:0;
+  }
+
+  to {
+    opacity:1;  
+  }
+}
+
+/*中の要素*/
+.bgappear{
+  animation-name:bgextendAnimeSecond;
+  animation-duration:1s;
+  animation-delay: 0.6s;
+  animation-fill-mode:forwards;
+  opacity: 0;
+  display: inline-block;
+  color: #fff;
+  padding: 0 20px;
+}
+
+@keyframes bgextendAnimeSecond{
+  0% {
+  opacity: 0;
+  }
+  100% {
+  opacity: 1;
+  }
+}
+
+/*左から右*/
+.bgLRextend::before{
+  animation-name:bgLRextendAnime;
+  animation-duration:3s;
+  animation-fill-mode:forwards;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #000;/*伸びる背景色の設定*/
+    padding: 0 10px;
+}
+@keyframes bgLRextendAnime{
+  0% {
+    transform-origin:left;
+    transform:scaleX(0);
+  }
+  100% {
+    transform-origin:left;
+    transform:scaleX(1);
+  }
+  /* 50% {
+    transform-origin:left;
+    transform:scaleX(1);
+  }
+  50.001% {
+    transform-origin:right;
+  }
+  100% {
+    transform-origin:right;
+    transform:scaleX(0);
+  } */
+}
+
+/* スクロールをしたら出現する要素にはじめに透過0を指定　*/
+.bgappearTrigger,
+.bgLRextendTrigger{
+  opacity: 0;
+}
+
+
+
+/*==================================================
+アコーディオンのためのcss
+===================================*/
+
+/*アコーディオン全体*/
+.accordion-area {
+  list-style: none;
+  width: 96%;
+  max-width: 900px;
+  margin:0 auto;
+}
+.accordion-area li { margin: 10px 0; }
+/* .accordion-area section { border: 1px solid #ccc; } */
+
+/*アコーディオンタイトル*/
+.title {
+  position: relative;/*+マークの位置基準とするためrelative指定*/
+  cursor: pointer;
+  font-size:18px;
+  font-weight: normal;
+  padding: 3% 3% 3% 50px;
+  transition: all .5s;
+}
+
+/*アイコンの＋と×*/
+.title::before,
+.title::after {
+  position: absolute;
+  content:'';
+  width: 35px;
+  height: 5px;
+  background-color: #fff;
+  transition: all .5s;
+}
+.title::before {
+  top:48%;
+  right: 15px;
+  transform: rotate(0deg);
+}
+.title::after {
+  top:48%;
+  right: 15px;
+  transform: rotate(90deg);
+}
+/*　closeというクラスがついたら形状変化　*/
+.title.close::before { transform: rotate(180deg); }
+.title.close::after { opacity: 0; transform: rotate(0deg); }
+
+/*アコーディオンで現れるエリア*/
+.box {
+  display: none;/*はじめは非表示*/
+  background: #fff;
+}
+
+/*tabの形状*/
+.tab {
+  display: flex;
+  flex-wrap: wrap;
+}
+.tab li a {
+  display: block;
+  background:#fff;
+  margin:0 2px;
+  padding:10px 20px;
+}
+/*liにactiveクラスがついた時の形状*/
+.tab li.active a {
+  background:#fff;
+}
+
+
+/*エリアの表示非表示と形状*/
+.area {
+  display: none;/*はじめは非表示*/
+  opacity: 0;/*透過0*/
+  background: #fff;
+  padding:50px 20px;
+}
+
+/*areaにis-activeというクラスがついた時の形状*/
+.area.is-active {
+    display: block;/*表示*/
+    animation-name: displayAnime;/*ふわっと表示させるためのアニメーション*/
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes displayAnime{
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/*========= バー表示のためのCSS ===============*/
+
+/*タイムライン全体の設定*/
+.timeline{
+  max-width: 400px;
+  width:100%;
+  margin:50px auto;
+  padding:0 30px;
+}
+
+.timeline li{
+    /*線の起点とするためrelativeを設定*/
+    position: relative;
+  list-style: none;
+  padding:0 0 20px 0;
+}
+
+.timeline dl{
+  margin:0 0 20px 3em;
+}
+
+.timeline dd strong{
+  display: block;
+  padding:10px 0;
+}
+
+/*絶対配置で線を設定*/
+.border-line {
+    /*線の位置*/
+  position: absolute;
+  left:0.2em;
+  top:0;
+  width:2px;/*線の太さ*/
+  height:0;/*はじめは高さを0に*/
+  background: #ccc;
+}
+
+/*タイムラインの見出し横の丸の位置と形状*/
+.timeline li::after{
+  content:'';
+  position: absolute;
+  top:0;
+  left:0;
+  width:10px;
+  height: 10px;
+  background:#666;
+  border-radius: 50%;
+}
+
+
+
+/*==================================================
+ふわっ
+===================================*/
+
+/* その場で */
+.fadeIn{
+  animation-name:fadeInAnime;
+  animation-duration:1s;
+  animation-fill-mode:forwards;
+  opacity:0;
+  }
+  
+  @keyframes fadeInAnime{
+    from {
+      opacity: 0;
+    }
+  
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* 下から */
+  
+  .fadeUp{
+  animation-name:fadeUpAnime;
+  animation-duration:0.5s;
+  animation-fill-mode:forwards;
+  opacity:0;
+  }
+  
+  @keyframes fadeUpAnime{
+    from {
+      opacity: 0;
+    transform: translateY(100px);
+    }
+  
+    to {
+      opacity: 1;
+    transform: translateY(0);
+    }
+  }
+  
+  /* 上から */
+  
+  .fadeDown{
+  animation-name:fadeDownAnime;
+  animation-duration:0.5s;
+  animation-fill-mode:forwards;
+  opacity:0;
+  }
+  
+  @keyframes fadeDownAnime{
+    from {
+      opacity: 0;
+    transform: translateY(-100px);
+    }
+  
+    to {
+      opacity: 1;
+    transform: translateY(0);
+    }
+  }
+  
+  /* 左から */
+  
+  .fadeLeft{
+  animation-name:fadeLeftAnime;
+  animation-duration:0.5s;
+  animation-fill-mode:forwards;
+  opacity:0;
+  }
+  
+  @keyframes fadeLeftAnime{
+    from {
+      opacity: 0;
+    transform: translateX(-100px);
+    }
+  
+    to {
+      opacity: 1;
+    transform: translateX(0);
+    }
+  }
+  
+  /* 右から */
+  
+  .fadeRight{
+  animation-name:fadeRightAnime;
+  animation-duration:1.8s;
+  animation-fill-mode:forwards;
+  opacity:0;
+  }
+  
+  @keyframes fadeRightAnime{
+    from {
+      opacity: 0;
+      transform: translateX(200px);
+    }
+  
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+
+  .late-box {
+    opacity: 0;
+
+    /* animation-name: late-open;
+    animation-duration: ease-in 10s;
+    animation-fill-mode:forwards; */
+
+    animation: late-open .5s ease-in 10s forwards;
+  }
+
+  @keyframes late-open {
+    0% {
+      opacity: 0;
+      transform: translateX(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  /*========= レイアウトのためのCSS ===============*/

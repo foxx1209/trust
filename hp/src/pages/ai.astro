@@ -1,0 +1,109 @@
+---
+import SubFv from "@components/sub-fv.astro";
+import Layout from "@layouts//Layout.astro";
+import Section from "@components/SectionHeader.astro";
+import CardContent from "@components/CardContent.astro";
+import Close from "@components/Close.astro";
+
+import {Image} from "astro:assets";
+import Ai1 from "../assets/images/ai1.png";
+import Ai2 from "../assets/images/ai2.png";
+import Ai3 from "../assets/images/chat.png";
+import Card7 from "../assets/images/section-card7.jpg";
+import Card8 from "../assets/images/section-card8.jpg";
+import Card9 from "../assets/images/section-card9.jpg";
+import Card10 from "../assets/images/section-card10.jpg";
+import Card11 from "../assets/images/section-card11.jpg";
+import Card12 from "../assets/images/section-card12.jpg";
+import Card13 from "../assets/images/section-card13.jpg";
+import Card14 from "../assets/images/section-card14.jpg";
+import Card15 from "../assets/images/section-card15.jpg";
+import Card16 from "../assets/images/section-card16.jpg";
+
+
+
+
+
+---
+
+<Layout title=ページタイトル  description="ページの紹介文">
+  <SubFv title="生成AI<br>ソリューション<br>支援" titleEn="Support" sp/>
+
+    <section class="section-wrapper" data-aos="fade-up" data-aos-duration="3000">
+      <Section title="AIマーケティング戦略デザイン" img={Ai1} subTitle="最既存のデータと施策を土台に、<br>生成AIで“次の売上曲線”を描く成長加速施策。" text="現在の運用に対して、さらなるレバレッジポイントを求める企業向け。データ分析からシナリオ設計、AIコンテンツ基盤構築まで一気通貫で支援します。" alt="AIマーケティング戦略デザイン" />
+      <div class="section-cards">
+        <CardContent number="01" img={Card7} title="AIマーケ現状診断" text="売上・顧客・業務フローのデータを横断チェックし、AIが寄与できる「伸びしろ領域」を見える化。改善優先度と投資対効果を提示します。" alt="AIマーケ現状診断" first/>
+        <CardContent number="02" img={Card8} title="成長シナリオデザイン" text="〈顧客データ×生成AI〉で“誰に、何を、いつ”を再設計。広告・ウェブ・メール・営業資料など複数チャネルにまたがる最適化方針をまとめます。" alt="成長シナリオデザイン" second/>
+        <CardContent number="03" img={Card9} title="AIコンテンツ&キャンペーン基盤構築" text="記事・LPコピー・バナー・動画などをAIを活用した運用モデルを設計。制作時間を短縮し、テストサイクルを高速化します。" alt="AIコンテンツ&キャンペーン基盤構築" third/>
+        <CardContent number="04" img={Card10} title="KPIモニタリング＆改善フレーム" text="施策ごとの数値を集計し、効果を可視化。定期レビューで再学習・シナリオ調整を行います。中長期的に見てKPIとしている成果の最大化に努めます。" alt="AIコンテンツ&キャンペーン基盤構築" second/>
+      </div>
+    </section>
+    <section class="section-wrapper" data-aos="fade-up" data-aos-duration="3000">
+      <Section title="生成AI導入<br>コンサルティング" sp img={Ai2} subTitle="「AIの活かし方がわからない」を０から解消し、社内定着まで伴走する安心プラン。" text="これから生成AIを取り入れたい、あるいは試行段階で止まっている企業を対象に、基礎研修・小規模テスト・運用ルール整備を段階的に実施。無理なくスタートできる環境を整えます。" alt="AIマーケティング戦略デザイン" />
+      <div class="section-cards">
+        <CardContent number="01" img={Card11} title="生成AIスターター研修" text="目的に応じて活用すべき生成AIの選定や高精度なプロンプト作成方法など、基礎的な内容を支援。" alt="生成AIスターター研修" first/>
+        <CardContent number="02" img={Card12} title="小さく始める業務テスト" text="〈顧客データ×生成AI〉で“誰に、何を、いつ”を再設計。広告・ウェブ・メール・営業資料など複数チャネルにまたがる最適化方針をまとめます。" alt="成長シナリオデザイン" second/>
+        <CardContent number="03" img={Card13} title="定着サポート＆ルール整備" text="実務で成果を出すための活用方法を社員向けに教育・実習" alt="定着サポート＆ルール整備" third/>
+      </div>
+    </section>
+    <section class="section-wrapper section-wrapper-last" data-aos="fade-up" data-aos-duration="3000">
+      <Section title="チャットボット＆FAQシステム開発" img={Ai3} subTitle="24時間対応の自己解決窓口を実装。" text="問い合わせ対応にかかる時間やコストを削減したい企業向けに、設計から実装までワンストップで提供。運用後の改善サイクルまで含め、負荷を大幅に軽減します。" alt="チャットボット＆FAQシステム開発" />
+      <div class="section-cards">
+        <CardContent number="01" img={Card14} title="ナレッジ自動取り込み" text="Word・PDF・マニュアルを AI がまとめて学習。登録作業を大幅削減し、回答精度を底上げ。" alt="ナレッジ自動取り込み" first/>
+        <CardContent number="02" img={Card15} title="多チャネルボット連携" text="Web・LINE・Teams に同時設置。日本語はもちろん英語・中国語も標準対応で窓口を一本化。" alt="多チャネルボット連携" second/>
+        <CardContent number="03" img={Card16} title="定着サポート＆ルール整備" text="「よく聞かれる質問」や「未解決率」をダッシュボード表示。毎月の提案で自己解決率 70％以上を目指します。" alt="定着サポート＆ルール整備" third/>
+      </div>
+    </section>
+
+  <Close />
+</Layout>
+<style>
+  .u-sp{
+    display: block;
+    @media(width >= 48rem) {
+      display: block;
+    }
+  }
+
+.section-wrapper + .section-wrapper{
+  margin-top: calc(80* var(--torem));
+  @media(width >= 48rem) {
+    margin-top: calc(150* var(--torem));
+  }
+}
+.section-wrapper-last{
+  margin-bottom: calc(80* var(--torem));
+  @media(width >= 48rem) {
+    margin-bottom: calc(150* var(--torem));
+  }
+}
+
+
+  .section-cards{
+  display: grid;
+  background-color: #e6e9ee;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  max-inline-size: calc(1320* var(--torem));
+  inline-size: 100%;
+  margin-left: auto;
+  position: relative;
+  z-index: 1;
+  padding-inline-start: calc(15* var(--torem));
+  padding-inline-end: calc(15* var(--torem));
+  @media(width >= 48rem) {
+      margin-block-start: calc(-153* var(--torem));
+padding-inline-start: fluid(20px 103px);
+  padding-inline-end: fluid(20px 100px);
+  }
+}
+ 
+.card-content__text + span{
+background: linear-gradient(86.82deg, #20377A 4.26%, #2C85C5 92.99%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+text-fill-color: transparent;
+}
+  
+</style>

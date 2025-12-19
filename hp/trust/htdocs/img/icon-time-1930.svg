@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_レイヤー_1" data-name="レイヤー 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 19">
+  <defs>
+    <style>
+      .cls-1 {
+        stroke-miterlimit: 4;
+        stroke-width: 1px;
+      }
+
+      .cls-1, .cls-2 {
+        fill: none;
+        stroke: #006591;
+      }
+
+      .cls-3 {
+        fill: #f0f6f7;
+        stroke-width: 0px;
+      }
+    </style>
+  </defs>
+  <g id="_楕円形_21" data-name="楕円形 21">
+    <circle class="cls-3" cx="9.5" cy="9.5" r="9.5"/>
+    <circle class="cls-2" cx="9.5" cy="9.5" r="9"/>
+  </g>
+  <line id="_線_30" data-name="線 30" class="cls-1" x1="9.79" y1="9.97" x2="7.29" y2="14.3"/>
+  <line id="_線_195" data-name="線 195" class="cls-2" x1="9.79" y1="10.17" x2="9.79" y2="17.17"/>
+</svg>

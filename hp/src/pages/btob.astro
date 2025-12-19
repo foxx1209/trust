@@ -1,0 +1,98 @@
+---
+// Config
+import SubFv from "@components/sub-fv.astro";
+// Layout
+import Layout from "@layouts//Layout.astro";
+import Section from "@components/SectionHeader.astro";
+import CardContent from "@components/CardContent.astro";
+import Close from "@components/Close.astro";
+
+import {Image} from "astro:assets";
+import Btob1 from "../assets/images/btob.png";
+import hub from "../assets/images/hub.png";
+import insaide from "../assets/images/insaide.png";
+import Card1 from "../assets/images/section-card1.jpg";
+import Card2 from "../assets/images/section-card2.jpg";
+import Card3 from "../assets/images/section-card3.jpg";
+import Card4 from "../assets/images/section-card4.jpg";
+import Card5 from "../assets/images/section-card5.jpg";
+import Card6 from "../assets/images/section-card6.jpg";
+
+---
+
+<Layout title=ページタイトル  description="ページの紹介文">
+  <SubFv title="BtoB<br>マーケティング<br>支援" titleEn="Support" sp/>
+
+    <section class="section-wrapper" data-aos="fade-up" data-aos-duration="3000">
+      <Section title="BtoB特化型広告運用" img={Btob1} subTitle="質の高いリードを獲得し、ビジネス成長へ" text="BtoB領域の広告運用に求められるのは、「数」ではなく「質」。TrustLinkは、BtoBマーケティング全体を見据えた戦略的なWEB広告プランニングで、良質なリード獲得から商談化・成約までを一気通貫で支援します。" alt="BtoB特化型広告運用" />
+      <div class="section-cards">
+        <CardContent number="01" img={Card1} title="KPI設計 & WEB広告プランニング" text="ビジネスモデルに合わせた<span>KPI設計</span>で、現状の課題や目標を踏まえた適切な指標を設定し、<span>広告施策の改善・最適化</span>を継続的に支援し、BtoB向けに相性の良い媒体を組み合わせて運用します。また、業界特化キーワードや役職・企業規模別のセグメントを設計し、<span>費用対効果の高い集客</span>を実現いたします。" alt="BtoB特化型広告運用" first blue/>
+        <CardContent number="02" img={Card2} title="クリエイティブ制作" text="獲得に特化したLPの制作や、各媒体の特性を理解したバナー制作で<span>広告効果の向上</span>を行います。また、BtoB商材・サービスの強みを活かした広告文やLPの制作方針を策定いたします。" alt="クリエイティブ制作" second grade/>
+        <CardContent number="03" img={Card3} title="レポーティング & 改善提案" text="<span>定期的なレポート</span>提供し、獲得リード数だけでなく有効リード数など、BtoB特有の指標を可視化します。また、媒体軸、クリエイティブ訴求軸、検索クエリ分析などはもちろん、ヒートマップ分析などを基にした<span>LPの改善</span>もご提案。" alt="レポーティング & 改善提案" third blue/>
+      </div>
+    </section>
+    <section class="section-wrapper" data-aos="fade-up" data-aos-duration="3000">
+      <Section title="HubSpot導入支援" img={hub} subTitle="HubSpot導入で、<br>リード獲得から商談化までを最適化" text="HubSpotの導入から運用・定着化までを一貫支援。質の高いリード獲得とインサイドセールスによる適切なフォローを強化し、マーケティング活動を確実に商談化へとつなげます。" alt="BtoB特化型広告運用" />
+      <div class="section-cards">
+        <CardContent number="01" img={Card4} title="HubSpot導入&運用" text="導入支援はもちろん、導入後の現場定着や日々の運用上の課題を解決するため、運用トレーニングや改善サポートを継続的に提供します。" alt="HubSpot導入支援" second/>
+      </div>
+    </section>
+    <section class="section-wrapper section-wrapper-last">
+      <Section title="インサイドセールス<br>支援" sp img={insaide} subTitle="ターゲット企業を狙い撃つ。<br>ABM視点のインサイドセールス支援。" text="ターゲット企業の選定から、戦略的なアプローチ設計、実行支援までを一気通貫でサポートし、高精度なアプローチで商談化率・成約率の向上を実現します。" alt="インサイドセールス支援" />
+      <div class="section-cards">
+        <CardContent number="01" img={Card5} title="インサイドセールス導入支援" text="各社に最適なインサイドセールスの仕組みづくりをゼロから支援。リード獲得後の商談化をスムーズにします。" alt="インサイドセールス導入支援" first/>
+        <CardContent number="02" img={Card6} title="パーソナライズ施策の強化" text="ターゲット企業を明確化し、一社一社に合わせた精度の高いパーソナライズ施策を展開。商談化率・成約率を最大限まで高めます。" alt="パーソナライズ施策の強化" second/>
+      </div>
+    </section>
+      <Close />
+</Layout>
+<style>
+  .u-sp{
+    display: block;
+    @media(width >= 48rem) {
+      display: block;
+    }
+  }
+
+.section-wrapper + .section-wrapper{
+  margin-top: calc(80* var(--torem));
+  @media(width >= 48rem) {
+    margin-top: calc(150* var(--torem));
+  }
+}
+.section-wrapper-last{
+  margin-bottom: calc(80* var(--torem));
+  @media(width >= 48rem) {
+    margin-bottom: calc(150* var(--torem));
+  }
+}
+
+
+  .section-cards{
+  display: grid;
+  background-color: #e6e9ee;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  max-inline-size: calc(1320* var(--torem));
+  inline-size: 100%;
+  margin-left: auto;
+  position: relative;
+  z-index: 1;
+  padding-inline-start: calc(15* var(--torem));
+  padding-inline-end: calc(15* var(--torem));
+  @media(width >= 48rem) {
+      margin-block-start: calc(-153* var(--torem));
+padding-inline-start: fluid(30px 103px);
+  padding-inline-end: fluid(20px 100px);
+  }
+}
+ 
+.card-content__text + span{
+background: linear-gradient(86.82deg, #20377A 4.26%, #2C85C5 92.99%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+text-fill-color: transparent;
+}
+  
+</style>

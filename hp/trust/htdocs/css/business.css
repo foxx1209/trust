@@ -1,0 +1,246 @@
+@charset "utf-8";
+
+#business .p-sidetitle {
+  background-color: #EBEAE7;
+}
+
+.p-business .__sv {
+  position: relative;
+  padding: 160px 0 40px;
+  background-color: #F0F6F7;
+  overflow-x: hidden;
+}
+.p-business .__sv .__bg {
+  display: none;
+}
+.p-business .__sv .__inner > div {
+  width: calc(100% / 2);
+}
+.p-business .__sv .__inner .__l h3 {
+  color: #006591;
+}
+.p-business .__sv .__inner .__l p {
+  color: #303339;
+  padding: 0;
+  height: 10em;
+}
+.p-business .__sv .__inner .__r {
+  position: relative;
+  height: 434px;
+}
+.p-business .__sv .__inner .__r .__wrap {
+  position: absolute;
+  top: 0;
+  right: -12em;
+  height: 100%;
+}
+
+.p-business .__body {
+  position: relative;
+}
+.p-business .__body .__bg {
+  position: absolute;
+  top: 0;
+  width: 50vw;
+  height: 100px;
+  margin: 0 calc(106% - 50vw);
+  background-color: #F0F6F7;
+}
+.p-business .__body .__inner {
+  gap: 10em;
+}
+.p-business .__body .__inner > div {
+  width: calc(100% / 2);
+}
+
+.p-business .__body .__business {
+  padding-top: 100px;
+  padding-bottom: 128px;
+}
+.p-business .__body .__business p {
+  margin-bottom: 30px;
+}
+.p-business .__body .__business h4 {
+  margin-bottom: 62px;
+}
+
+.p-business .__body .__brand {
+  position: relative;
+  padding: 92px 0 46px;
+  background-color: #F8F8F7;
+  margin-bottom: 128px;
+}
+.p-business .__body .__brand .__bg {
+  position: absolute;
+  top: 0;
+  width: calc(50vw + 600px);
+  height: 100%;
+  margin: 0 calc(50% - 50vw);
+  background-color: #F8F8F7;
+  z-index: -1;
+}
+
+.p-business .__body .__brand .__title {
+  position: absolute;
+  top: -0.5em;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 30px;
+}
+.p-business .__body .__brand .__inner {
+  align-items: flex-start;
+  gap: 10em;
+}
+.p-business .__body .__brand .__inner .__image {
+  width: 100%;
+  height: 250px;
+  margin-bottom: 32px;
+}
+.p-business .__body .__brand .__inner p {
+  margin-bottom: 30px;
+}
+.p-business .__body .__brand p.c-lang-wrap {
+  height: 15em;
+}
+.p-business .__body .__brand a.c-lang-wrap {
+  width: inherit;
+}
+.p-business .__body .__brand .c-lang-wrap > span {
+  display: block;
+}
+
+/* 2025  */
+.c-grid--2{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+.c-grid--2 > div {
+  width: 100% !important;
+}
+.p-business .__body .__brand .__inner > div:nth-of-type(3) > .c-ex__03 {
+        height: 16em;
+    }
+
+
+
+
+@media screen and (max-width: 1023px) {
+
+  #business .p-sidetitle {
+    display: none;
+  }
+
+  .p-business .__sv {
+    padding: 70px 0 0;
+  }
+  .p-business .__sv .__bg {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    width: 60vw;
+    height: 20px;
+    margin: 0 calc(50% - 50vw);
+    background-color: #fff;
+  }
+  .p-business .__sv .__inner {
+    flex-wrap: wrap;
+  }
+  .p-business .__sv .__inner > div {
+    width: 100%;
+    height: auto;
+  }
+  .p-business .__sv .__inner .__l h3 {
+    text-align: center;
+  }
+  .p-business .__sv .__inner .__l p {
+    width: calc(375px - 64px);
+    margin: 3em auto 1em;
+    height: 15em;
+  }
+  .p-business .__sv .__inner .__r {
+    height: 190px;
+  }
+  .p-business .__sv .__inner .__r .__wrap {
+    top: 0;
+    right: -4em;
+    width: 100%;
+  }
+
+  .p-business .__body .__bg {
+    height: 80px;
+    margin: 0 calc(112% - 50vw);
+  }
+  .p-business .__body .__business {
+    padding-bottom: 0;
+  }
+  .p-business .__body .__business p {
+    margin-bottom: 0;
+  }  
+  .p-business .__body .__business h4 {
+    margin: 0.5em auto 1em;
+  }
+  .p-business .__body .__business .__inner {
+    flex-wrap: wrap;
+    gap: 2em;
+  }
+  .p-business .__body .__business .__inner > div {
+    width: 100%;
+    height: 100%;
+  }
+  .p-business .__body .__business .__inner > div.__r {
+    height: 280px;
+  }
+
+  .p-business .__body .__brand {
+    padding: 60px 0;
+    margin: 60px auto 0;
+  }
+  .p-business .__body .__brand .__title {
+    left: 0;
+    transform: none;
+  }
+
+  .p-business .__body .__brand .__inner {
+    flex-wrap: wrap;
+  }
+  .p-business .__body .__brand .__inner > div {
+    width: 100%;
+    height: 600px;
+  }
+  .p-business .__body .__brand .__inner > div:nth-of-type(2) {
+    height: 700px;
+  }
+  .p-business .__body .__brand .__inner > div:nth-of-type(2) > .c-ex__03 {
+    height: 20em;
+  }
+
+  .p-business .__body .__brand p.c-lang-wrap {
+    height: 13em;
+  }
+
+  /* 2025 */
+
+.c-grid--2{
+  display: flex;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

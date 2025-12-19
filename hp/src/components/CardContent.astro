@@ -1,0 +1,176 @@
+---
+const {number,img,title,text,alt} = Astro.props;
+import { Image } from 'astro:assets';
+const {
+  first = false,
+  second = false,
+  blue = false,
+  grade = false,
+} = Astro.props;
+---
+
+<div class="card-content" class:list={{
+    'card-content--first': first,
+    'card-content--second': second,
+  }}>
+  <div class="card-content-left">
+    <span class="card-content__nunber">{number}</span>
+    <figure class="card-content__img">
+      <Image src={img} alt={alt} />
+    </figure>
+  </div>
+  <div class="card-content__textarea">
+    <h3 class="card-content__title">{title}</h3>
+    <p class="card-content__text" class:list={{
+      'card-content__text--blue': blue,
+      'card-content__text--grade': grade,
+    }} set:html={text}></p>
+  </div>
+
+</div>
+
+<style>
+  
+.card-content {
+display: flex;
+flex-direction: column;
+background-image: url("../assets/images/first-bg.webp");
+background-size: contain;
+background-position: center;
+background-repeat: no-repeat;
+align-items: center;
+justify-content:space-between ;
+position: relative;
+gap: 0;
+padding: calc(40* var(--torem)) 0;
+
+@media(width >= 48rem) {
+  flex-direction: row;
+  align-items: center;
+  gap: calc(60* var(--torem));
+  gap: fluid(20px 60px);
+  padding: calc(80* var(--torem)) 0;
+}
+@media(width >= 1200px) {
+ align-items: flex-start;
+}
+}
+.card-content-left{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  max-inline-size: calc(400* var(--torem));
+  margin-inline: auto;
+  @media(width >= 1200px) {
+flex-direction: row;
+        margin-inline: initial;
+        max-inline-size: initial;
+  }
+
+}
+.card-content.card-content--second{
+  background-image: url("../assets/images/sec-bg.webp");
+}
+/* .card-content.card-content--third{
+  background-image: url("../assets/images/th-bg.webp");
+} */
+.card-content:not(:last-child)::before{
+  content: "";
+  display: block;
+  inline-size: 100%;
+  block-size: 1px;
+  background-color: #C9D6DE;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+.card-content:not(:last-child)::after{
+  content: "";
+  display: block;
+  inline-size: calc(5* var(--torem));
+  block-size: calc(5* var(--torem));
+  background: linear-gradient(86.82deg, #20377A 4.26%, #2C85C5 92.99%);
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  border-radius: 50%;
+}
+
+.card-content__nunber {
+background: linear-gradient(86.82deg, #20377A 4.26%, #2C85C5 92.99%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+text-fill-color: transparent;
+opacity: 0.41;
+font-family:var(--font-en);
+flex-shrink: 0;
+display: inline-block;
+margin-inline-end:0;
+line-height:1;
+font-size: calc(50* var(--torem));
+@media(width >= 48rem) {
+  font-size: calc(68* var(--torem));
+  
+}
+@media(width >= 1200px) {
+  margin-inline-end: fluid( 10px 104px);
+}
+}
+
+.card-content__img {
+max-inline-size: calc(210* var(--torem));
+inline-size: 100%;
+margin-block-start: calc(10* var(--torem));
+img{
+  aspect-ratio: 210/210;
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+}
+@media(width >= 48rem) {
+margin-block-start: 0;
+}
+}
+
+.card-content__textarea {
+max-inline-size: calc(400* var(--torem));
+inline-size: 100%;
+margin-block-start: calc(24* var(--torem));
+@media(width >= 48rem) {
+  margin-block-start: calc(-12* var(--torem));
+  max-inline-size: calc(665* var(--torem));
+
+}
+}
+
+.card-content__title {
+font-size: calc(18* var(--torem));
+font-weight: 700;
+letter-spacing: 0.1em;
+text-align: center;
+@media(width >= 48rem) {
+  font-size: calc(28* var(--torem));
+  text-align: left;
+}
+}
+
+.card-content__text {
+margin-top: calc(20* var(--torem));
+font-size: calc(14* var(--torem));
+line-height: 2.5;
+font-weight: 500;
+letter-spacing: 0.1em;
+@media(width >= 48rem) {
+  font-size: calc(16* var(--torem));
+}
+
+
+}
+
+
+
+
+
+</style>

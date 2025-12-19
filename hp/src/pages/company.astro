@@ -1,0 +1,529 @@
+---
+import { Image } from 'astro:assets';
+import Layout from "@layouts//Layout.astro";
+import SubFv from "@components/sub-fv.astro";
+import CompanyBg from "@assets/images/section-company-bg.webp";
+import CompanyBg2 from "@assets/images/section-company-bg2.webp";
+import CompanyBg3 from "@assets/images/section-company-bg3.webp";
+import MessageImg from "@assets/images/dummy.png";
+import Close from "@components/Close.astro";
+
+---
+
+<Layout title=ページタイトル  description="ページの紹介文">
+  <SubFv title="会社概要" titleEn="Company" />
+  <section class="company" data-aos="fade-up" data-aos-duration="3000">
+    <div class="company__inner">
+      <div class="company__contents">
+        <div class="company__content">
+          <h2 class="company__title">Mission</h2>
+          <p class="company__text">本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。</p>
+        </div>
+        <div class="company__content">
+          <h2 class="company__title">Vision</h2>
+          <p class="company__text">本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。</p>
+        </div>
+        <div class="company__content">
+          <h2 class="company__title">Values</h2>
+          <p class="company__text">本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。</p>
+        </div>
+      </div>
+    </div>
+    <div class="company__bg">
+        <img src={CompanyBg.src} alt="" class="" />
+     </div>
+     <div class="company__bg2">
+        <img src={CompanyBg2.src} alt="" class="" />
+     </div>
+     <div class="company__bg3">
+       <img src={CompanyBg3.src} alt="" class="" />
+     </div>
+  </section>
+
+  <section class="message" data-aos="fade-up" data-aos-duration="3000">
+    <div class="message__inner">
+      <h2 class="message__title" data-en="Message">代表あいさつ</h2>
+      <div class="message__content">
+        <div class="message__content-inner">
+                  <div class="mesaage__left">
+          <figure class="maessage__img">
+            <Image src={MessageImg} alt="代表取締役社長　濱野 康佑" />
+          </figure>
+          <p class="message__name">代表取締役社長　濱野 康佑</p>
+        </div>
+        <div class="message__right">
+          <p class="message__text">本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。</p>
+        </div>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="info">
+    <div class="info__inner">
+      <div class="info__content">
+        <div class="info__left">
+          <dl class="info__list">
+            <div class="info__item">
+              <dt class="info__item-title">社名</dt>
+              <dd class="info__item-text">株式会社TrustLink</dd>
+            </div>
+            <div class="info__item">
+              <dt class="info__item-title">会社役員</dt>
+              <dd class="info__item-text">代表取締役社長 濱野 康佑</dd>
+            </div>
+            <div class="info__item">
+              <dt class="info__item-title">事業内容</dt>
+              <dd class="info__item-text">デジタルマーケティング事業</dd>
+            </div>
+            <div class="info__item">
+              <dt class="info__item-title">設立日</dt>
+              <dd class="info__item-text">2024年◯月◯日ング事業</dd>
+            </div>
+            <div class="info__item">
+              <dt class="info__item-title">資本金</dt>
+              <dd class="info__item-text">1,000,000円</dd>
+            </div>
+            <div class="info__item">
+              <dt class="info__item-title">創業</dt>
+              <dd class="info__item-text">2024年</dd>
+            </div>
+            <div class="info__item">
+              <dt class="info__item-title">所在地</dt>
+              <dd class="info__item-text">東京都</dd>
+            </div>
+            <div class="info__item">
+              <dt class="info__item-title">主要取引銀行</dt>
+              <dd class="info__item-text">○○銀行</dd>
+            </div>
+          </dl>
+        </div>
+        <div class="info__right">
+          <div class="info__map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3250.612528685556!2d139.6471421!3d35.4396273!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60185ce172991153%3A0xaf31cef041800893!2z44CSMjMxLTA4NjEg56We5aWI5bed55yM5qiq5rWc5biC5Lit5Yy65YWD55S677yU5LiB55uu77yR77yW77yYIEJpemNvbWZvcnTlhYPnlLrjg5Pjg6s!5e0!3m2!1sja!2sjp!4v1754387072111!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+          <p class="info__map-text">最寄駅：〇〇駅より徒歩5分</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <Close />
+</Layout>
+
+<style>
+.company {
+inline-size: 100%;
+margin-inline: auto;
+position: relative;
+z-index: -1;
+
+
+}
+
+.company__inner {
+  max-inline-size: calc(1100* var(--torem));
+  inline-size: 100%;
+  margin-inline: auto;
+  @media(width >= 48rem) {
+  padding-inline-start: calc(100* var(--torem));
+  }
+  
+}
+
+.company__contents {
+  background-color:#E6E9EE;
+  padding-block: calc(30* var(--torem));
+  position: relative;
+  padding-inline:calc(20* var(--torem));
+  gap: calc(30* var(--torem));
+  border-top-right-radius: calc(20* var(--torem));
+  border-bottom-right-radius: calc(20* var(--torem));
+  display: grid;
+@media(width >= 48rem) {
+  padding-block-start: calc(50* var(--torem));
+  padding-block-end: calc(40* var(--torem));
+  padding-inline-end: fluid( 20px 43px);
+  margin-inline-end: fluid( 30px 80px);
+  gap: calc(70* var(--torem));
+}
+}
+.company__contents::before {
+ position: relative;
+ z-index: 1;
+ @media(width >= 48rem) {
+content: "";
+  position: absolute;
+ inline-size: 100%;
+ block-size: 100%;
+ background-color: #E6E9EE;
+ left:-100%;
+ top: 0; }
+}
+.company__content::after {
+  content: "";
+  display: block;
+  position: absolute;
+  inline-size: 100%;
+  block-size: 100%;
+background: linear-gradient(86.82deg, #20377A 4.26%, #25599A 42.71%, #2C85C5 92.99%);
+position:absolute;
+border-bottom-right-radius: 20px;
+border-bottom-left-radius: 20px;
+left: 0;
+z-index: -2;
+top: 30px;
+@media(width >= 48rem) {
+  left: 30px;
+  border-radius: 0px 20px 20px 0px;
+}
+}
+
+.company__content {
+inline-size: 100%;
+}
+
+.company__title {
+background: linear-gradient(86.82deg, #20377A 4.26%, #2C85C5 92.99%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+text-fill-color: transparent;
+inline-size: fit-content;
+line-height: 1;
+letter-spacing: 0.03em;
+position: relative;
+z-index: 1;
+font-family: var(--font-en);
+font-size: calc(30* var(--torem));
+@media(width >= 48rem) {
+  font-size: calc(60* var(--torem));
+}
+}
+.company__title::first-letter {
+  font-size: calc(40* var(--torem));
+  @media(width >= 48rem) {
+    font-size: calc(80* var(--torem));
+  }
+}
+
+.company__text {
+font-size: calc(16* var(--torem));
+letter-spacing: 0.1em;
+line-height: 2.5;
+position: relative;
+z-index: 2;
+margin-block-start: calc(10* var(--torem));
+
+@media(width >= 48rem) {
+  margin-inline-start: calc(40* var(--torem));
+}
+}
+.company__bg {
+max-inline-size: calc(195* var(--torem));
+inline-size: 100%;
+position: absolute;
+top:calc(50% + 125px);
+transform: translateY(-50%);
+left: calc(50% - fluid( 200px 658px));
+z-index: 1;
+display: none;
+@media(width >= 48rem) {
+  display: block;
+}
+}
+
+.company__bg2 {
+max-inline-size: calc(245* var(--torem));
+inline-size: 100%;
+position: absolute;
+top: 20px;
+z-index: 0;
+right:10%;
+@media(width >= 48rem) {
+  right: calc(50% - fluid( 300px 441px));
+
+}
+}
+
+.company__bg3 {
+max-inline-size: calc(278* var(--torem));
+inline-size: 100%;
+position: absolute;
+bottom: -145px;
+z-index: 0;
+right: 10%;
+@media(width >= 48rem) {
+  bottom: -90px;
+  right: calc(50% - fluid( 200px 630px));
+
+}
+
+
+}
+
+
+.message {
+    padding-block-end: calc(70* var(--torem));
+  padding-block-start: calc(288* var(--torem));
+ 
+@media(width >= 48rem) {
+    padding-block-end: calc(140* var(--torem));
+  padding-block-start: calc(288* var(--torem));
+}
+}
+.message__title{
+  font-size: calc(25* var(--torem));
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  inline-size: 100%;
+  @media(width >= 48rem) {
+  font-size: calc(32* var(--torem));
+  
+  }
+}
+.message__title::before {
+ content: attr(data-en);
+ font-size: calc(75* var(--torem));
+ letter-spacing: 0.03em;
+ font-family: var(--font-en);
+ font-weight: 700;
+ text-align: center;
+background: linear-gradient(86.82deg, #20377A 4.26%, #2C85C5 92.99%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+text-fill-color: transparent;
+opacity: 0.1;
+position: absolute;
+z-index: 1;
+top:50%;
+left: 50%;
+display: block;
+margin-block-start: calc(-23* var(--torem));
+inline-size: 100%;
+transform: translate(-50%, -50%);
+z-index: -1;
+ @media(width >= 48rem) {
+  font-size: fluid( 150px 180px);
+  margin-block-start: calc(-72* var(--torem));
+
+ }
+}
+.message__inner {
+  padding: 0;
+ background: url("../assets/images/message-bg.webp") no-repeat top;
+  background-size: cover;
+  @media(width >= 48rem) {
+    background-size: contain;
+    padding: 0 calc(20* var(--torem));
+
+  }
+}
+
+.message__content {
+margin-block-start: calc(35* var(--torem));
+background: rgba(255, 255, 255, 0.6);
+backdrop-filter: blur(20px);
+border-radius: 20px;
+padding-block: calc(30* var(--torem));
+max-inline-size: calc(1200* var(--torem));
+inline-size: 100%;
+margin-inline: auto;
+@media(width >= 48rem) {
+  
+  gap: calc(70* var(--torem));
+  padding-block: calc(60* var(--torem));
+  padding-inline:;
+}
+}
+
+.message__content-inner {
+  inline-size: 100%;
+  display: flex;
+flex-direction: column;
+justify-content: center;
+padding: 0 calc(20* var(--torem));
+max-inline-size: calc(500* var(--torem));
+inline-size: 100%;
+gap: calc(30* var(--torem));
+margin-inline: auto;
+@media(width >= 48rem) {
+  max-inline-size: calc(955* var(--torem));
+
+  flex-direction: row;
+  gap: calc(70* var(--torem));
+  align-items: flex-start;
+}
+} 
+
+.mesaage__left {
+display: grid;
+gap: calc(15* var(--torem));
+flex-shrink: 0;
+}
+
+.maessage__img {
+inline-size: 100%;
+margin-inline: auto;
+
+img{
+  aspect-ratio: 310/380;
+  object-fit: cover;
+  inline-size: 100%;
+  block-size: 100%;
+}
+@media(width >= 48rem) {
+  margin-inline: initial;
+  max-inline-size: calc(310* var(--torem));
+
+}
+}
+
+.message__name {
+font-size: calc(18* var(--torem));
+font-weight: 500;
+letter-spacing: 0.1em;
+text-align: center;
+@media(width >= 48rem) {
+  font-size: calc(20* var(--torem));
+}
+}
+
+.message__right {
+
+}
+
+.message__text {
+font-size: calc(16* var(--torem));
+letter-spacing: 0.1em;
+line-height: 2.19;
+}
+
+
+.info {
+  padding-block-end: calc(75* var(--torem));
+  @media(width >= 48rem) {
+    padding-block-end: calc(150* var(--torem));
+  }
+
+}
+
+.info__inner {
+padding-inline:calc(20* var(--torem));
+}
+
+.info__content {
+max-inline-size: calc(1200* var(--torem));
+inline-size: 100%;
+margin-inline: auto;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+@media(width >= 48rem) {
+  gap: calc(34* var(--torem));
+}
+@media(width >= 1130px) {
+  flex-direction: row;
+  align-items: flex-end;
+}
+}
+
+.info__left {
+  inline-size: fit-content;
+  @media(width >= 48rem) {
+      max-inline-size: calc(600* var(--torem));
+
+  }
+}
+
+.info__list {
+display: grid;
+gap: calc(20* var(--torem));
+}
+
+.info__item {
+display: flex;
+
+}
+
+.info__item-title {
+inline-size: calc(100* var(--torem));
+font-size: calc(15* var(--torem));
+font-weight: 600;
+flex-shrink: 0;
+letter-spacing: 0.1em;
+padding-block-end:calc(10* var(--torem));
+border-bottom: 2px solid #3C98CF;
+@media(width >= 48rem) {
+  inline-size: calc(200* var(--torem));
+font-size: calc(20* var(--torem));
+
+}
+
+
+}
+
+.info__item-text {
+flex-grow: 1;
+font-size: calc(15* var(--torem));
+font-weight: 400;
+letter-spacing: 0.1em;
+border-bottom: 2px solid #C9D6DE;
+padding-inline-start: 0;
+inline-size:fit-content;
+padding-inline-start: calc(20* var(--torem));
+
+@media(width >= 1130px) {
+padding-inline-start: calc(42* var(--torem));
+flex-grow: 1;
+font-size: calc(20* var(--torem));
+
+
+
+
+}
+}
+
+.info__right {
+display: grid;
+max-inline-size: calc(400* var(--torem));
+inline-size: 100%;
+@media(width >= 48rem) {
+  max-inline-size: calc(566* var(--torem));
+}
+}
+
+
+.info__map {
+  inline-size: 100%;
+  margin-block-start:calc(20* var(--torem));
+  
+  
+  max-inline-size: calc(400* var(--torem));
+  @media(width >= 48rem) {
+    max-inline-size: calc(566* var(--torem));
+}
+iframe{
+  aspect-ratio: 566 /309;
+  object-fit: cover;
+  inline-size: 100%;
+  block-size: 100%;
+}
+}
+
+.info__map-text {
+font-size: calc(16* var(--torem));
+margin-block-start:calc(10* var(--torem));
+letter-spacing: 0.1em;
+font-weight: 400;
+
+}
+
+
+
+</style>

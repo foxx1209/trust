@@ -1,0 +1,6 @@
+{
+  "extends": ["@hilosiva/biome-config"],
+  "javascript": {
+    "globals": ["Astro"]
+  }
+}

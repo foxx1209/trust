@@ -1,0 +1,11 @@
+@charset "utf-8";
+
+.bgLRextend::before{
+  background-color: #FFCD3C;/*伸びる背景色の設定*/
+}
+.c-subpage__catch::before {
+  background-image: url(../img/waku-orange_01.svg);
+}
+.c-subpage__catch::after {
+  background-image: url(../img/waku-orange_02.svg);
+}

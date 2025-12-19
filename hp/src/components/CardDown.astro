@@ -1,0 +1,138 @@
+---
+import { Image } from "astro:assets";
+import Sample from "../assets/images/sample.jpg";
+
+const {title,alt,link,label } = Astro.props;
+
+const baseUrl = import.meta.env.BASE_URL;
+// 絶対パス（/で始まる）の場合、baseUrlを追加
+const href = link?.startsWith('/') ? `${baseUrl}${link.slice(1)}` : link || baseUrl;
+---
+<div class="card">
+  <figure class="card__img">
+    <Image src={Sample} alt={alt} />
+  </figure>
+    <h3 class="card__title">{title}</h3>
+   <a
+  class="btn" href={href}>
+  {label}
+</a>
+</div>
+
+<style>
+ .card {
+  display: grid;
+  grid-row: span 3;
+  grid-template-rows: subgrid;
+  gap: 0;
+  align-items: start;
+  gap: calc(15* var(--torem));
+  inline-size: 100%;
+  margin-inline: auto;
+max-inline-size: calc(400* var(--torem));
+  background-color: var(--white);
+  padding:calc(20* var(--torem));
+  text-decoration: none;
+    transition: all 0.3s ease-in-out;
+
+  @media(width >= 48rem) {
+      max-inline-size: calc(340* var(--torem));
+      inline-size: 100%;
+        padding:fluid( 10px 19px);
+  }
+}
+
+.card__img {
+max-inline-size: calc(400* var(--torem));
+inline-size: 100%;
+margin-inline: auto;
+img{
+  aspect-ratio: 295/212;
+  object-fit: cover;
+  inline-size: 100%;
+  block-size: 100%;
+}
+@media(width >= 48rem) {
+  max-inline-size: calc(295* var(--torem));
+}
+}
+.card__title{
+  text-align: center;
+  font-size: calc(16* var(--torem));
+  font-weight: 500;
+  letter-spacing: 0.1em;
+ 
+}
+.btn{
+   font-size: calc(18* var(--torem));
+   font-weight: 500;
+   color: var(--white);
+   background: var(--gradient-color);
+   border-radius: 40px;
+   display: flex;
+   align-items: center;
+   text-align: center;
+   gap: calc(15* var(--torem));
+    padding: calc(16* var(--torem)) calc(30* var(--torem));
+   text-decoration: none;
+   letter-spacing: 0.1em;
+   transition: all 0.3s ease;
+   position: relative;
+   overflow: hidden;
+   z-index: 1;
+   max-inline-size: calc(257* var(--torem));
+   inline-size: 100%;
+   margin-inline: auto;
+   @media(width >= 48rem) {
+       justify-content: center;
+
+    padding: calc(7* var(--torem)) ;
+   }
+  
+  }
+  
+  .btn::before {
+   content: '';
+   position: absolute;
+   top: 0;
+   left: 0;
+   inline-size: 100%;
+   block-size: 100%;
+   background: var(--gradient-color-hover);
+   opacity: 0;
+   transition: all 0.3s ease;
+   z-index: -1;
+  }
+  .btn::after{
+    background: url("../assets/images/btn-arrow.webp") no-repeat center center / contain;
+    content: "";
+    display: block;
+    inline-size: calc(35* var(--torem));
+    block-size: calc(35* var(--torem));
+    position: absolute;
+    right: calc(20* var(--torem));
+    top: 50%;
+    transform: translateY(-50%);
+    @media(width >= 48rem) {
+      position: static;
+      transform: none;
+      top: auto;
+      right: auto;
+    }
+  }
+  @media (any-hover: hover) {
+
+  .btn:hover::before {
+       opacity: 1;
+   }
+  }
+   .btn--white{
+    background: linear-gradient(86.82deg, #20377A 4.26%, #2C85C5 92.99%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+   
+   }
+
+</style>

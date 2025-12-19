@@ -1,0 +1,222 @@
+---
+// Config
+
+import Layout from "@layouts//Layout.astro";
+import SubFv from "@components/sub-fv.astro";
+import CardCl from "@components/CardCl.astro";
+import Close from "@components/Close.astro";
+
+---
+
+<Layout title=ページタイトル  description="ページの紹介文">
+<SubFv title="コラム一覧" titleEn="Column" sp/>
+<div class="column" data-aos="fade-up" data-aos-duration="3000">
+  <div class="column__inner">
+  <ul class="column__list">
+    <li class="column__item is-active">
+      <button class="column__item-text">BtoBマーケティング</button>
+    </li>
+    <li class="column__item">
+      <button class="column__item-text">AI実務活用Tips</button>
+    </li>
+    <li class="column__item">
+      <button class="column__item-text">ABM</button>
+    </li>
+    
+  </ul>
+    <div class="column__cards ">
+      <CardCl />
+      <CardCl />
+      <CardCl />
+      <CardCl />
+      <CardCl />
+      <CardCl />
+      <CardCl />
+      <CardCl />
+      <CardCl />
+    </div>
+    <div class="column__paganation">
+      <a href="" class="column__paganation-link is-active">
+        <span class="column__paganation-number">1</span>
+      </a>
+      <a href="" class="column__paganation-link">
+        <span class="column__paganation-number">2</span>
+      </a>
+      <a href="" class="column__paganation-link">
+        <span class="column__paganation-number">3</span>
+      </a>
+      <!-- <a href="" class="column__paganation-link">
+        <span class="column__paganation-number">4</span>
+      </a>
+      <a href="" class="column__paganation-link">
+        <span class="column__paganation-number">5</span>
+      </a> -->
+    </div>
+</div>
+</div>
+  <Close />
+</Layout>
+
+<style>
+  .column{
+    padding-bottom: calc(80* var(--torem));
+    background: url("../assets/images/column-cards-bg.png") no-repeat top;
+    background-size: cover;
+
+    @media(width >= 48rem) {
+      padding-bottom: calc(150* var(--torem));
+      background-size: contain;
+    }
+  }
+  .column__inner {
+    padding: 0 calc(20* var(--torem));
+  }
+
+  .column__cards { 
+  display: grid;
+  gap: calc(20* var(--torem));
+  max-inline-size: calc(1140* var(--torem));
+  margin-inline: auto;
+  justify-content: center;
+  margin-block-start: calc(30* var(--torem));
+  @media(width >= 48rem) {
+    gap: fluid(10px 40px);
+    grid-template-columns: repeat(auto-fit, minmax(min(calc(340 * var(--torem)), 100%), calc(340 * var(--torem))));
+  margin-block-start: calc(50* var(--torem));
+  }
+}
+.column__list{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: calc(20* var(--torem));
+  flex-wrap: wrap;
+  @media(width >= 48rem) {
+      gap: calc(30* var(--torem));
+
+  }
+}
+.column__item{
+  background-color: var(--white);
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.column__item::after{
+content: "";
+display: block;
+position: absolute;
+top: -1px;
+left: -1px;
+inline-size: calc(100% + 2px);
+block-size: calc(100% + 2px);
+background-color: var(--black);
+z-index: -1;
+background: linear-gradient(86.82deg, #20377A 4.26%, #2C85C5 92.99%);
+}
+.column__item.is-active{
+  opacity: 1;
+  transition: all 0.3s ease;
+  background: linear-gradient(86.82deg, #20377A 4.26%, #2C85C5 92.99%);
+}
+.column__item.is-active .column__item-text{
+  background: none;
+  color: var(--white);
+  -webkit-background-clip: initial;
+-webkit-text-fill-color: initial;
+background-clip: initial;
+text-fill-color: initial;
+}
+.column__item-text{
+  inline-size: fit-content;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  padding: calc(1* var(--torem)) calc(5* var(--torem)) calc(1* var(--torem)) calc(5* var(--torem));
+  font-size: calc(14* var(--torem));
+  font-weight: 700;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(86.82deg, #20377A 4.26%, #2C85C5 92.99%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+text-fill-color: transparent;
+}
+.column__paganation {
+margin-block-start: calc(30* var(--torem));
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+max-inline-size: calc(250* var(--torem));
+inline-size: 100%;
+margin-inline: auto;
+inline-size: fit-content;
+gap: calc(10* var(--torem));
+@media(width >= 48rem) {
+  margin-block-start: calc(60* var(--torem));
+}
+
+}
+
+.column__paganation-link {
+text-decoration: none;
+inline-size: calc(36* var(--torem));
+block-size: calc(36* var(--torem));
+border-radius: 50%;
+display: grid;
+place-items: center;
+background-color: var(--white);
+transition: all 0.3s ease;
+position: relative;
+}
+
+.column__paganation-link::after{
+  content: "";
+  display: block;
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  background: linear-gradient(86.82deg, #20377A 4.26%, #2C85C5 92.99%);
+  border-radius: 50%;
+  inline-size: calc(100% + 2px);
+  block-size: calc(100% + 2px);
+  background-color: var(--white);
+  z-index: -1;
+}
+.column__paganation-number{
+  font-size: calc(18* var(--torem));
+  font-weight: 400;
+  transition: all 0.3s ease;
+background: linear-gradient(86.82deg, #20377A 4.26%, #2C85C5 92.99%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+text-fill-color: transparent;
+position: relative;
+
+
+
+}
+.column__paganation-link.is-active{
+  background: linear-gradient(86.82deg, #20377A 4.26%, #2C85C5 92.99%);
+}
+.column__paganation-link.is-active .column__paganation-number{
+  color: var(--white);
+background:initial;
+  -webkit-background-clip: initial;
+-webkit-text-fill-color: initial;
+background-clip: initial;
+text-fill-color: initial;
+}
+@media (any-hover: hover) {
+.column__paganation-link:hover::after{
+  opacity: 1;
+}
+.column__paganation-link:hover .column__paganation-number{
+  opacity: 0.7;
+}
+}
+
+
+</style>

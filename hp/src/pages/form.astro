@@ -5,7 +5,7 @@ import SubFv from "@components//sub-fv.astro";
 const baseUrl = import.meta.env.BASE_URL;
 ---
 
-<Layout title=ページタイトル  description="ページの紹介文">
+<Layout title="お問い合わせ | Nexus Strategy"  description="お気軽にお問い合わせください">
   <SubFv title="お問い合わせ" titleEn="Contact" />
   <div class="inner">
   <form class="form" action="post">
@@ -14,7 +14,7 @@ const baseUrl = import.meta.env.BASE_URL;
       <div class="form__content">
         <label class="form__label">
           <span class="form__label-text" data-required="必須">会社名</span>
-          <input class="form__input" type="text" name="company" placeholder="株式会社Trust Link" autocomplete="organization" required/>
+          <input class="form__input" type="text" name="company" placeholder="会社名" autocomplete="organization" required/>
         </label>
         <label class="form__label">
           <span class="form__label-text" data-required="必須">名前</span>
@@ -97,7 +97,7 @@ select::-ms-expand {
   font-weight: 400;
 }
 .form {
-background-color: #E6E9EE;
+background-color: var(--off-white);
 max-inline-size: calc(1200* var(--torem));
 inline-size: 100%;
 margin-inline: auto;
@@ -174,7 +174,7 @@ gap: calc(10* var(--torem));
   font-size: calc(14* var(--torem));
   inline-size: calc(44* var(--torem));
   block-size: calc(24* var(--torem));
-  background: linear-gradient(86.82deg, #20377A 4.26%, #2C85C5 92.99%);
+  background: linear-gradient(135deg, #000000 0%, #2a2a2a 100%);
 }
 
 .form__input {

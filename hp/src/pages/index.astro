@@ -10,6 +10,9 @@ import Support2 from "../assets/images/support-img2.jpg";
 import SupportBg from "../assets/images/support-bg1.png";
 import Company from "../assets/images/company.png";
 import Close from "@components/Close.astro";
+
+import { getCollection } from "astro:content";
+const blogs = await getCollection("blogs");
 // Layout
 import Layout from "@layouts//Layout.astro";
 import Title from "@components/title.astro";
@@ -20,7 +23,9 @@ import CardCl from "@components/CardCl.astro";
 
 ---
 
-<Layout title="トップページ" description="ページの紹介文">
+
+
+<Layout title="Nexus Strategy - 戦略的コンサルティング" description="経営戦略から事業改革まで、データドリブンなアプローチで企業の持続的成長を支援します。">
   <FV />
 <section class="serive" data-aos="fade-up" data-aos-duration="3000">
   <div class="service__inner">
@@ -28,9 +33,9 @@ import CardCl from "@components/CardCl.astro";
       <div class="service__textarea">
         <hgroup class="">
           <TitleEn title="Service" />
-          <h2 class="service__title">BtoBマーケティングを<br class="u-sp">次のステージへ。<br><span class="service__title-big">AI活用で、<span class="service__title-blue">より確実に</span>。</span></h2>
+          <h2 class="service__title">ビジネスの可能性を<br class="u-sp">最大化する。<br><span class="service__title-big">戦略で、<span class="service__title-blue">確実な成長を</span>。</span></h2>
         </hgroup>
-        <p class="p-serice__text">TrustLinkはBtoBマーケティングを科学的に支援する専門家チームです。 豊富な経験に基づく戦略立案と、AIを活用したデータ分析により、再現性のある成果を追求。 リード獲得から商談化までのプロセスを最適化し、御社のビジネス成長を着実に加速いたします。豊富な実績とAI活用を軸に、BtoB企業の成長に必要な要素をワンストップで提供し、確かな成果を実現します。</p>
+        <p class="p-serice__text">Nexus Strategyは、戦略コンサルティングを通じて企業の本質的な成長を支援します。経営戦略の立案から実行支援まで、データに基づく論理的アプローチと豊富な実績により、持続可能な競争優位性を構築。市場分析、組織変革、デジタルトランスフォーメーションまで、企業価値の最大化に必要な全てのソリューションをワンストップで提供します。</p>
         <div class="service__bg">
           <Image src={ServiceBg} alt="AI活用で、より確実に。" />
         </div>
@@ -46,19 +51,19 @@ import CardCl from "@components/CardCl.astro";
   <div class="support__inner">
     <div class="support__content">
      <hgroup class="title title--row">
-      <TitleEn title="Support" />
-      <Title title="支援内容" />
+      <TitleEn title="Services" />
+      <Title title="サービス内容" />
     </hgroup> 
     <div class="support__cards">
       <div class="support__card">
         <figure class="supoort__img">
-          <Image src={Support} alt="BtoBマーケティング支援" />
+          <Image src={Support} alt="経営戦略コンサルティング" />
         </figure>
-        <h3 class="support__title">BtoBマーケティング支援</h3>
+        <h3 class="support__title">経営戦略コンサルティング</h3>
         <ul class="support__list">
-          <li class="support__item">・BtoB特化WEB広告運用</li>
-          <li class="support__item">・インサイドセールス支援</li>
-          <li class="support__item">・HubSpot導入支援 </li>
+          <li class="support__item">・事業戦略立案</li>
+          <li class="support__item">・市場参入戦略</li>
+          <li class="support__item">・M&A戦略支援 </li>
         </ul>
          <div class="support__btn">
           <Btn link="/btob" label="詳しく見る" small />
@@ -66,12 +71,12 @@ import CardCl from "@components/CardCl.astro";
        </div>
       <div class="support__card">
         <figure class="supoort__img">
-          <Image src={Support2} alt="BtoBマーケティング支援" />
+          <Image src={Support2} alt="組織・デジタル変革支援" />
         </figure>
-        <h3 class="support__title">生成AIソリューション支援</h3>
+        <h3 class="support__title">組織・デジタル変革支援</h3>
         <ul class="support__list">
-          <li class="support__item">・AIリサーチ・データ分析支援</li>
-          <li class="support__item">・AIコンテンツ作成支援援</li>
+          <li class="support__item">・DX推進・デジタル戦略</li>
+          <li class="support__item">・組織改革・人材育成</li>
         </ul>
         <div class="support__btn">
           <Btn link="/ai" label="詳しく見る" small />
@@ -81,16 +86,16 @@ import CardCl from "@components/CardCl.astro";
   </div>
 </div>
 <div class="support__bg">
-  <Image src={SupportBg} alt="BtoBマーケティング支援" />
+  <Image src={SupportBg} alt="" />
 </div> 
 <div class="support__bg2">
-  <Image src={SupportBg} alt="BtoBマーケティング支援" />
+  <Image src={SupportBg} alt="" />
 </div>
 <div class="support__bg3">
-  <Image src={SupportBg} alt="BtoBマーケティング支援" />
+  <Image src={SupportBg} alt="" />
 </div> 
 <div class="support__bg4">
-  <Image src={SupportBg} alt="BtoBマーケティング支援" />
+  <Image src={SupportBg} alt="" />
 </div>
 </section>
 
@@ -100,16 +105,12 @@ import CardCl from "@components/CardCl.astro";
 <TitleEn title="Column" />
 <Title title="コラム" />
 </hgroup> 
-<p class="p-column__text">BtoBマーケティングの成果向上に役立つノウハウや最新情報をお届けしています。</p>
-   <div class="column__cards">
-      <CardCl />
-      <CardCl />
-      <CardCl />
-    </div>
-    <div class="column__btn">
-      <Btn link="/column" label="コラム一覧を見る" large />
-    </div>
+<p class="p-column__text">経営戦略とビジネス変革に役立つ知見や最新のトレンド情報をお届けしています。</p>
+  <CardCl />
+  <div class="column__btn">
+    <Btn link="/column" label="コラム一覧を見る" large />
   </div>
+
 </section>
 <section class="campany" data-aos="fade-up" data-aos-duration="3000">
   <div class="company__inner">
@@ -120,7 +121,7 @@ import CardCl from "@components/CardCl.astro";
           <Title title="会社概要" />
         </hgroup>
         <div class="company__texterea">
-          <p class="p-company__text">TrustLinkはBtoBマーケティングを科学的に支援する専門家チームです。 豊富な経験に基づく戦略立案と、AIを活用したデータ分析により、再現性のある成果を追求。 リード獲得から商談化までのプロセスを最適化し、御社のビジネス成長を着実に加速いたします。豊富な実績とAI活用を軸に、BtoB企業の成長に必要な要素をワンストップで提供し、確かな成果を実現します。</p>
+          <p class="p-company__text">Nexus Strategyは、グローバルな視点とローカルな実行力を兼ね備えた戦略コンサルティングファームです。多様な業界における豊富な実績と、最新のビジネス理論に基づき、クライアント企業の持続的成長を実現。経営層との密なパートナーシップを通じて、戦略立案から実行、成果創出まで、一貫したサポートを提供します。</p>
         </div>
       </div>
       <div class="company__right">
@@ -164,7 +165,7 @@ import CardCl from "@components/CardCl.astro";
 
 .section-cards{
   display: grid;
-  background-color: #e6e9ee;
+  background-color: var(--off-white);
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
   max-inline-size: calc(1320* var(--torem));
@@ -182,7 +183,7 @@ padding-inline-start: fluid( 30px 58px);
 }
  
 .card-content__text + span{
-background: linear-gradient(86.82deg, #20377A 4.26%, #2C85C5 92.99%);
+background: linear-gradient(135deg, #000000 0%, #2a2a2a 100%);
 -webkit-background-clip: text;
 -webkit-text-fill-color: transparent;
 background-clip: text;
@@ -274,7 +275,7 @@ letter-spacing: 0.1em;
 }
 
 .service__title-blue {
-background: linear-gradient(86.82deg, #20377A 4.26%, #2C85C5 92.99%);
+background: linear-gradient(135deg, #000000 0%, #2a2a2a 100%);
 -webkit-background-clip: text;
 -webkit-text-fill-color: transparent;
 background-clip: text;
@@ -339,7 +340,7 @@ overflow-x: hidden;
 }
 
 .support__content {
-background: #E6E9EE;
+background: var(--off-white);
 inline-size: 100%;
 border-radius:calc(20* var(--torem));
 max-inline-size:calc(1200* var(--torem));
@@ -349,7 +350,7 @@ padding-block-start: calc(40* var(--torem));
 padding-block-end: calc(30* var(--torem));
 padding-inline: calc(20* var(--torem));
 position: relative;
-box-shadow: 10px 4px 15px rgba(0, 0, 0, 0.05);
+box-shadow: 10px 4px 25px rgba(0, 0, 0, 0.08);
 
 @media(width >= 48rem) {
   padding-inline-end: fluid( 60px 120px);
@@ -366,7 +367,7 @@ border-bottom-right-radius: 20px;
   max-inline-size: calc(2300* var(--torem));
   inline-size: 100vw;
   block-size: 100%;
-  background: #E6E9EE;
+  background: var(--off-white);
   left: -100%;
   position: absolute;
   top:50%;
@@ -382,9 +383,9 @@ border-bottom-right-radius: 20px;
   /* min-inline-size: calc(1195* var(--torem)); */
   block-size: 100%;
   inline-size: 100%;
-  background: linear-gradient(86.82deg, #20377A 4.26%, #2C85C5 92.99%);
-  opacity: 0.8;
-  box-shadow: 2px 4px 15px rgba(0, 0, 0, 0.05);
+  background: linear-gradient(135deg, #2a2a2a 0%, #000000 100%);
+  opacity: 0.15;
+  box-shadow: 2px 4px 25px rgba(0, 0, 0, 0.1);
   border-radius: 20px;
   position: absolute;
   right: 0;
@@ -592,7 +593,12 @@ background-size: contain;
 padding: 0 calc(20* var(--torem));
 }
 
-
+.column__btn{
+  margin-inline: auto;
+  
+  margin-block-start:calc(40* var(--torem));
+  
+}
 
 .column__title {
   margin-inline: auto;
@@ -610,30 +616,10 @@ letter-spacing: 0.1em;
 }
 }
 
-.column__cards { 
-  display: grid;
-  gap: calc(20* var(--torem));
-  max-inline-size: calc(1140* var(--torem));
-  margin-inline: auto;
-  margin-block-start: calc(30* var(--torem));
-  @media(width >= 48rem) {
-    gap: fluid( 10px 40px);
-  grid-template-columns: repeat(3,1fr);
-  margin-block-start: calc(50* var(--torem));
-  }
-}
 
-.column__btn {
-display: grid;
-place-items: center;
-margin-top: calc(15* var(--torem));
-@media(width >= 48rem) {
-  margin-top: calc(45* var(--torem));
-}
-}
 
 .campany {
-background: #e6e9ee;
+background: var(--off-white);
 border-radius: calc(10* var(--torem));
 
 margin-bottom: calc(80* var(--torem));

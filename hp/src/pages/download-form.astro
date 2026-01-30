@@ -5,7 +5,7 @@ import SubFv from "@components//sub-fv.astro";
 const baseUrl = import.meta.env.BASE_URL;
 ---
 
-<Layout title=ページタイトル  description="ページの紹介文">
+<Layout title="資料ダウンロード | Nexus Strategy"  description="サービス資料のダウンロードはこちらから">
   <SubFv title="資料ダウンロード" titleEn="Materials Download" />
   <div class="inner">
   <form class="form" action="post">
@@ -96,7 +96,7 @@ select::-ms-expand {
   font-weight: 400;
 }
 .form {
-background-color: #E6E9EE;
+background-color: var(--off-white);
 max-inline-size: calc(1200* var(--torem));
 inline-size: 100%;
 margin-inline: auto;
@@ -177,7 +177,7 @@ gap: calc(10* var(--torem));
   font-size: calc(14* var(--torem));
   inline-size: calc(44* var(--torem));
   block-size: calc(24* var(--torem));
-  background: linear-gradient(86.82deg, #20377A 4.26%, #2C85C5 92.99%);
+  background: linear-gradient(135deg, #000000 0%, #2a2a2a 100%);
 }
 
 .form__input {

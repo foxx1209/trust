@@ -9,14 +9,14 @@ import BtnWhite from "@components/Button-white.astro";
   <div class="close__cards">
     <div class="close__card">
       <p class="close__card-title">お問い合わせ・ご相談</p>
-      <p class="close__card-text">マーケティングに関することならお気軽にご相談ください。お見積もり依頼も可能です。</p>
+      <p class="close__card-text">経営戦略・組織変革に関することならお気軽にご相談ください。お見積もり依頼も可能です。</p>
       <div class="close-btn-wrapper">
         <BtnWhite link="/form" label="お問い合わせする" />
       </div>
       </div>
     <div class="close__card">
       <p class="close__card-title">資料ダウンロード</p>
-      <p class="close__card-text">マーケティングやAIについてのお役立ち資料を下記より無料でダウンロードできます。</p>
+      <p class="close__card-text">経営戦略やDXについてのお役立ち資料を下記より無料でダウンロードできます。</p>
       <div class="close-btn-wrapper">
         <BtnWhite link="/download" label="ダウンロードする" />
       </div>
@@ -40,11 +40,10 @@ import BtnWhite from "@components/Button-white.astro";
     position: absolute;
     inset: 0;
     z-index: -1;
-/* background: linear-gradient(86deg, #20377A 4%, #2C85C5 73%); */
-background: linear-gradient(86deg, #20377A 4%, #4aa2e1 95%);
+background: linear-gradient(135deg, #000000 0%, #2a2a2a 100%);
 box-shadow: 2px 4px 15px rgba(0, 0, 0, 0.05);
 @media(width >= 48rem) {
-  background: linear-gradient(86deg, #20377A 4%, #2C85C5 73%);
+  background: linear-gradient(135deg, #000000 0%, #2a2a2a 100%);
 }
 }
 
@@ -94,11 +93,9 @@ display: block;
 text-align: center;
 color: var(--white);
 line-height: 2.14;
-max-inline-size: calc(260* var(--torem));
 inline-size: 100%;
 margin-inline: auto;
 @media(width >= 48rem) {
-  max-inline-size: calc(360* var(--torem));
   font-size: calc(18* var(--torem));
 }
 }

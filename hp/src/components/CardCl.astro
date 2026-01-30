@@ -1,21 +1,51 @@
 ---
 import { Image } from 'astro:assets';
 import Sample from "../assets/images/sample.jpg";
+import Btn from "@components/Button.astro";
+import { getCollection } from "astro:content";
+const blogs = await getCollection("blogs");
+// propsからblogsを受け取る（指定がない場合は全件取得）
+interface Props {
+  blogs?: any[];
+}
 
-const baseUrl = import.meta.env.BASE_URL;
 ---
-<a class="card" href={`${baseUrl}`}>
-  <div class="card__img">
-    <Image src={Sample} alt="コラムの内容に適した画像" />
+
+ <div class="column__cards">
+  {
+blogs.map((blog) => (
+ <a class="card" href={blog.id}>
+  <div class="card__img"> 
+    <img width="100" height="100" loading="lazy" decoding="async" src={blog.data.img?.url} alt={blog.data.img?.alt || blog.data.title}/>
   </div>
-    <div class="card__body-header">
-      <p class="categry__name">カテゴリが入ります。</p>
-      <time datetime="2025-06-03" class="card__date">2025/06/30</time>
-    </div>
-    <h3 class="card__title">ここにタイトルが入ります。</h3>
-</a>
+    <h3 class="card__title">{blog.data.title}</h3>
+  
+</a>  ))
+}
+</div>
 
 <style>
+  .column__cards { 
+  display: grid;
+  gap: calc(20* var(--torem));
+  max-inline-size: calc(1140* var(--torem));
+  margin-inline: auto;
+  margin-block-start: calc(30* var(--torem));
+  @media(width >= 48rem) {
+    gap: fluid( 10px 40px);
+  grid-template-columns: repeat(3,1fr);
+  margin-block-start: calc(50* var(--torem));
+  }
+}
+
+.column__btn {
+display: grid;
+place-items: center;
+margin-top: calc(15* var(--torem));
+@media(width >= 48rem) {
+  margin-top: calc(45* var(--torem));
+}
+}
 .card {
   display: grid;
   grid-row: span 3;
@@ -74,7 +104,7 @@ color: var(--white);
 letter-spacing: 0.1em;
 padding: calc(3* var(--torem)) calc(5* var(--torem));
 font-size:calc(11* var(--torem));
-background: linear-gradient(86.82deg, #20377A 4.26%, #2C85C5 92.99%);
+background: linear-gradient(135deg, #000000 0%, #2a2a2a 100%);
 font-weight: 700;
 @media(width >= 48rem) {
   font-size: calc(14* var(--torem));

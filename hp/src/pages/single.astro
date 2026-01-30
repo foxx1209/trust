@@ -9,7 +9,7 @@ import Button from "../components/Button.astro";
 import Close from "@components/Close.astro";
 ---
 
-<Layout title=ページタイトル  description="ページの紹介文">
+<Layout title="DX推進の成功戦略 | Nexus Strategy"  description="デジタルトランスフォーメーションを成功に導くための実践的アプローチ">
   <div class="single" data-aos="fade-up" data-aos-duration="3000">
     <div class="single-header">
       <div class="single-category-wrapper">
@@ -23,19 +23,13 @@ import Close from "@components/Close.astro";
       <div class="post__content">
       <div class="post__inner">
       <figure class="post__img">
-        <Image src={dummy} alt="ダミー画像" />
+        <Image src={dummy} alt="デジタルトランスフォーメーション戦略" />
       </figure>
       <div class="post__textarea">
-        <p class="post__text">本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。
-本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。
-本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。
-本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。
-本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。
-本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。
-本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。
-本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。</p>
+        <p class="post__text">デジタルトランスフォーメーション（DX）は、単なるIT化ではありません。ビジネスモデルそのものを変革し、新たな価値を創造するための戦略的取り組みです。<br><br>多くの企業がDXの必要性を認識しながらも、具体的な進め方に悩んでいます。成功の鍵は、明確なビジョンの設定、段階的な実行計画、そして組織全体の変革マインドセットにあります。<br><br>本記事では、DX推進における重要なポイントと、実際の成功事例から学ぶべき教訓について解説します。データ基盤の構築からビジネスモデルの変革まで、包括的なアプローチが求められます。<br><br>また、DXは経営層のコミットメントが不可欠です。トップダウンとボトムアップの両方のアプローチを組み合わせることで、組織全体を巻き込んだ変革が実現します。</p>
       </div>
     </div>
+  </div>
   </div>
   <div class="post__link">
     <Button label="コラム一覧に戻る" link="/column" reverse />
@@ -56,7 +50,7 @@ padding-bottom: calc(100* var(--torem));
 }
 
 .single-header {
-background: linear-gradient(86.82deg, #20377A 4.26%, #2C85C5 92.99%);
+background: linear-gradient(135deg, #000000 0%, #2a2a2a 100%);
 box-shadow: 2px 4px 15px rgba(0, 0, 0, 0.05);
 border-radius: 20px 20px 0px 0px;
 position: relative;
@@ -91,7 +85,7 @@ padding: calc(3* var(--torem)) calc(5* var(--torem));
 font-size: calc(14* var(--torem));
 letter-spacing: 0.1em;
 font-weight: 700;
-background: linear-gradient(86.82deg, #20377A 4.26%, #2C85C5 92.99%);
+background: linear-gradient(135deg, #000000 0%, #2a2a2a 100%);
 -webkit-background-clip: text;
 -webkit-text-fill-color: transparent;
 background-clip: text;
@@ -121,7 +115,7 @@ margin-block-start: calc(13* var(--torem));
 max-inline-size: calc(1320* var(--torem));
 inline-size: 100%;
 margin-inline: auto;
-background: #E6E9EE;
+background: var(--off-white);
 border-radius: 20px;
 padding: calc(40* var(--torem)) 0;
 @media(width >= 48rem) {

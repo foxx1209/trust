@@ -1,0 +1,348 @@
+---
+import { getCollection } from "astro:content";
+
+// 詳細記事ページの全パスを取得
+export async function getStaticPaths() {
+ const blogs = await getCollection("blogs");
+ return blogs.map((blog) => ({
+   params: {
+     blogId: blog.id,
+   },
+   props: {
+     blog,
+   },
+ }));
+}
+
+// 記事の詳細情報を取得
+const { blog } = Astro.props;
+import Layout from "@layouts//Layout.astro";
+---
+
+<Layout title="Nexus Strategy - 戦略的コンサルティング" description="経営戦略から事業改革まで、データドリブンなアプローチで企業の持続的成長を支援します。">
+ <main class="blog-detail">
+   <article class="article">
+    <header class="article__header">
+      <h1 class="article__title">{blog.data.title}</h1>
+    </header>
+    <div class="article__body">
+    {
+    blog.data.content ? (
+  <div class="prose" set:html={blog.data.content}></div>
+) : (
+  <div class="prose prose--empty">
+    <p>コンテンツが登録されていません。</p>
+  </div>
+)}
+      
+    </div>
+   </article>
+ </main>
+
+</Layout>
+
+<style>
+ .blog-detail {
+  min-block-size: 100vh;
+  padding-block: calc(120 * var(--torem)) calc(160 * var(--torem));
+  background: linear-gradient(180deg, var(--off-white) 0%, var(--white) 100%);
+ }
+
+ .article {
+  inline-size: min(100%, calc(800 * var(--torem)));
+  margin-inline: auto;
+  padding-inline: calc(24 * var(--torem));
+ }
+
+ .article__header {
+  margin-block-end: calc(80 * var(--torem));
+  padding-block-end: calc(48 * var(--torem));
+  border-block-end: 1px solid rgba(42, 90, 138, 0.1);
+ }
+
+ .article__title {
+  font-size: clamp(calc(32 * var(--torem)), 6vw, calc(56 * var(--torem)));
+  font-weight: 800;
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+  color: var(--main-color);
+  margin: 0;
+  background: linear-gradient(135deg, var(--main-color) 0%, var(--accent-navy) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+ }
+
+ .article__body {
+  position: relative;
+ }
+
+ /* 洗練されたタイポグラフィシステム */
+ .prose {
+  color: var(--dark-gray);
+  font-size: calc(17 * var(--torem));
+  line-height: 2;
+  letter-spacing: 0.04em;
+  font-feature-settings: "palt" 1;
+ }
+
+ .prose :global(h2) {
+  font-size: clamp(calc(28 * var(--torem)), 4vw, calc(36 * var(--torem)));
+  font-weight: 800;
+  margin-block-start: calc(96 * var(--torem));
+  margin-block-end: calc(32 * var(--torem));
+  color: var(--main-color);
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+  position: relative;
+ }
+
+ .prose :global(h2::after) {
+  content: "";
+  display: block;
+  inline-size: calc(48 * var(--torem));
+  block-size: calc(4 * var(--torem));
+  background: var(--gradient-color);
+  margin-block-start: calc(16 * var(--torem));
+  border-radius: calc(2 * var(--torem));
+ }
+
+ .prose :global(h3) {
+  font-size: clamp(calc(22 * var(--torem)), 3vw, calc(28 * var(--torem)));
+  font-weight: 700;
+  margin-block-start: calc(72 * var(--torem));
+  margin-block-end: calc(24 * var(--torem));
+  color: var(--main-color);
+  line-height: 1.6;
+  letter-spacing: 0;
+ }
+
+ .prose :global(h4) {
+  font-size: calc(20 * var(--torem));
+  font-weight: 600;
+  margin-block-start: calc(48 * var(--torem));
+  margin-block-end: calc(20 * var(--torem));
+  color: var(--accent-navy);
+  line-height: 1.7;
+ }
+
+ .prose :global(p) {
+  margin-block: calc(32 * var(--torem));
+ }
+
+ .prose :global(p:first-child) {
+  margin-block-start: 0;
+ }
+
+ .prose :global(p:last-child) {
+  margin-block-end: 0;
+ }
+
+ /* リンクスタイル */
+ .prose :global(a) {
+  color: var(--accent-navy);
+  text-decoration: none;
+  border-block-end: 1px solid var(--accent-navy-light);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  padding-block-end: calc(2 * var(--torem));
+ }
+
+ .prose :global(a:hover) {
+  color: var(--accent-navy-light);
+  border-block-end-color: var(--accent-navy);
+ }
+
+ /* 強調テキスト */
+ .prose :global(strong) {
+  font-weight: 700;
+  color: var(--main-color);
+ }
+
+ .prose :global(em) {
+  font-style: normal;
+  color: var(--accent-navy);
+  font-weight: 500;
+ }
+
+ /* リスト */
+ .prose :global(ul),
+ .prose :global(ol) {
+  margin-block: calc(40 * var(--torem));
+  padding-inline-start: calc(24 * var(--torem));
+ }
+
+ .prose :global(li) {
+  margin-block: calc(16 * var(--torem));
+  line-height: 2;
+  position: relative;
+  padding-inline-start: calc(12 * var(--torem));
+ }
+
+ .prose :global(ul > li::marker) {
+  color: var(--accent-navy);
+ }
+
+ .prose :global(ol > li::marker) {
+  color: var(--accent-navy);
+  font-weight: 700;
+ }
+
+ /* 引用 */
+ .prose :global(blockquote) {
+  margin-block: calc(56 * var(--torem));
+  margin-inline: 0;
+  padding: calc(32 * var(--torem)) calc(40 * var(--torem));
+  background: var(--white);
+  border-inline-start: calc(4 * var(--torem)) solid var(--accent-navy);
+  border-radius: 0 calc(8 * var(--torem)) calc(8 * var(--torem)) 0;
+  box-shadow: 0 calc(4 * var(--torem)) calc(24 * var(--torem)) rgba(0, 0, 0, 0.04);
+  font-size: calc(16 * var(--torem));
+  color: var(--gray);
+  line-height: 2;
+ }
+
+ .prose :global(blockquote p) {
+  margin: 0;
+ }
+
+ /* コード */
+ .prose :global(code) {
+  background: var(--off-white);
+  color: var(--accent-teal);
+  padding: calc(4 * var(--torem)) calc(8 * var(--torem));
+  border-radius: calc(4 * var(--torem));
+  font-family: "Monaco", "Menlo", "Courier New", monospace;
+  font-size: calc(15 * var(--torem));
+  border: 1px solid rgba(42, 90, 138, 0.08);
+ }
+
+ .prose :global(pre) {
+  background: var(--main-color);
+  color: var(--off-white);
+  padding: calc(32 * var(--torem));
+  border-radius: calc(12 * var(--torem));
+  overflow-x: auto;
+  margin-block: calc(48 * var(--torem));
+  box-shadow: 0 calc(8 * var(--torem)) calc(40 * var(--torem)) rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+ }
+
+ .prose :global(pre code) {
+  background: transparent;
+  color: inherit;
+  padding: 0;
+  border: none;
+  font-size: calc(14 * var(--torem));
+ }
+
+ /* 画像 */
+ .prose :global(img) {
+  max-inline-size: 100%;
+  block-size: auto;
+  border-radius: calc(12 * var(--torem));
+  margin-block: calc(64 * var(--torem));
+  box-shadow: 0 calc(12 * var(--torem)) calc(48 * var(--torem)) rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+ }
+
+ .prose :global(figure) {
+  margin-block: calc(64 * var(--torem));
+  margin-inline: 0;
+ }
+
+ .prose :global(figcaption) {
+  font-size: calc(14 * var(--torem));
+  color: var(--gray);
+  text-align: center;
+  margin-block-start: calc(12 * var(--torem));
+  font-style: italic;
+ }
+
+ /* 水平線 */
+ .prose :global(hr) {
+  border: none;
+  block-size: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(42, 90, 138, 0.2),
+    transparent
+  );
+  margin-block: calc(80 * var(--torem));
+ }
+
+ /* テーブル */
+ .prose :global(table) {
+  inline-size: 100%;
+  border-collapse: collapse;
+  margin-block: calc(48 * var(--torem));
+  font-size: calc(15 * var(--torem));
+  box-shadow: 0 calc(4 * var(--torem)) calc(24 * var(--torem)) rgba(0, 0, 0, 0.04);
+  border-radius: calc(8 * var(--torem));
+  overflow: hidden;
+ }
+
+ .prose :global(th) {
+  background: var(--main-color);
+  color: var(--white);
+  padding: calc(16 * var(--torem)) calc(20 * var(--torem));
+  text-align: start;
+  font-weight: 600;
+ }
+
+ .prose :global(td) {
+  padding: calc(16 * var(--torem)) calc(20 * var(--torem));
+  border-block-end: 1px solid rgba(0, 0, 0, 0.05);
+  background: var(--white);
+ }
+
+ .prose :global(tr:last-child td) {
+  border-block-end: none;
+ }
+
+ /* レスポンシブ */
+ @media (width <= 48rem) {
+  .blog-detail {
+    padding-block: calc(100 * var(--torem)) calc(120 * var(--torem));
+  }
+
+  .article {
+    padding-inline: calc(20 * var(--torem));
+  }
+
+  .article__header {
+    margin-block-end: calc(56 * var(--torem));
+    padding-block-end: calc(32 * var(--torem));
+  }
+
+  .prose {
+    font-size: calc(16 * var(--torem));
+    line-height: 1.9;
+  }
+
+  .prose :global(h2) {
+    margin-block-start: calc(72 * var(--torem));
+    margin-block-end: calc(24 * var(--torem));
+  }
+
+  .prose :global(h3) {
+    margin-block-start: calc(56 * var(--torem));
+    margin-block-end: calc(20 * var(--torem));
+  }
+
+  .prose :global(blockquote) {
+    padding: calc(24 * var(--torem)) calc(24 * var(--torem));
+    margin-block: calc(40 * var(--torem));
+  }
+
+  .prose :global(pre) {
+    padding: calc(24 * var(--torem));
+    margin-block: calc(40 * var(--torem));
+  }
+
+  .prose :global(img) {
+    margin-block: calc(48 * var(--torem));
+  }
+ }
+ 
+</style>

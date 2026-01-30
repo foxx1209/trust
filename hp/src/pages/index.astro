@@ -106,7 +106,7 @@ import CardCl from "@components/CardCl.astro";
 <Title title="コラム" />
 </hgroup> 
 <p class="p-column__text">経営戦略とビジネス変革に役立つ知見や最新のトレンド情報をお届けしています。</p>
-  <CardCl />
+  <CardCl items={blogs} baseUrl="column" />
   <div class="column__btn">
     <Btn link="/column" label="コラム一覧を見る" large />
   </div>

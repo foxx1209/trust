@@ -1,0 +1,6 @@
+{
+  "devDependencies": {
+    "@markuplint/astro-parser": "^4.6.23",
+    "markuplint": "^4.14.1"
+  }
+}

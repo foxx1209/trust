@@ -60,7 +60,6 @@ const { blogs, currentPage, totalPages } = Astro.props;
         <span class="column__paganation-number">1</span>
       </a>
       
-      {/* 2ページ目以降 */}
       {Array.from({ length: totalPages - 1 }, (_, i) => i + 2).map((pageNum) => (
         <a 
           href={`${import.meta.env.BASE_URL}column/page/${pageNum}`} 

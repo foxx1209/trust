@@ -70,7 +70,7 @@ interface Props {
 
 const { 
   items, 
-  baseUrl = "column"  // デフォルトは "column"
+  baseUrl = ""  // デフォルトは "なし"
 } = Astro.props;
 ```
 

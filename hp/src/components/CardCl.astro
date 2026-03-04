@@ -1,6 +1,6 @@
 ---
 import { Image } from 'astro:assets';
-import Sample from "../assets/images/sample.jpg";
+import Sample from "../assets/images/no-image.webp";
 import Btn from "@components/Button.astro";
 
 /**
@@ -11,6 +11,7 @@ import Btn from "@components/Button.astro";
  * - ダウンロード資料: <CardCl items={downloads} baseUrl="download" />
  * - ニュース一覧: <CardCl items={news} baseUrl="news" />
  */
+// 型を定義
 interface Props {
   items: any[];  // 表示するアイテムの配列（必須）
   baseUrl?: string;  // リンク先のベースURL（デフォルト: "column"）
@@ -18,8 +19,10 @@ interface Props {
 
 const { 
   items, 
-  baseUrl = "column"  // デフォルトは "column"
+  baseUrl = ""  // デフォルトは "column"
 } = Astro.props;
+
+
 ---
 
  <div class="column__cards">
@@ -27,9 +30,15 @@ const {
 items.map((item) => (
  <a class="card" href={`${import.meta.env.BASE_URL}${baseUrl}/${item.id}`}>
   <div class="card__img"> 
-    <img width="100" height="100" loading="lazy" decoding="async" src={item.data.img?.url} alt={item.data.img?.alt || item.data.title}/>
+    {
+      item.data.img?
+      <img width="100" height="100" loading="lazy" decoding="async" src={item.data.img?.url} alt={item.data.img?.alt || item.data.title}/>
+      :
+        <Image src={Sample} alt={item.data.title} />
+    }
   </div>
     <h3 class="card__title">{item.data.title}</h3>
+    
   
 </a>  ))
 }

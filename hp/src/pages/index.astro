@@ -12,7 +12,8 @@ import Company from "../assets/images/company.png";
 import Close from "@components/Close.astro";
 
 import { getCollection } from "astro:content";
-const blogs = await getCollection("blogs");
+const allBlogs = await getCollection("blogs");
+const blogs = allBlogs.slice(0, 3);
 // Layout
 import Layout from "@layouts//Layout.astro";
 import Title from "@components/title.astro";
@@ -595,7 +596,7 @@ padding: 0 calc(20* var(--torem));
 
 .column__btn{
   margin-inline: auto;
-  
+  inline-size: fit-content;
   margin-block-start:calc(40* var(--torem));
   
 }

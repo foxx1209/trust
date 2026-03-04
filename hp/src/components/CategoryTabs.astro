@@ -1,0 +1,85 @@
+---
+import { CATEGORIES } from "@src/categories";
+
+interface Props {
+  currentCategory?: string;
+}
+
+const { currentCategory = "all" } = Astro.props;
+---
+
+<ul class="column__list">
+  <!-- 全て -->
+  <li class={`column__item ${currentCategory === "all" ? "is-active" : ""}`}>
+    <a href={`${import.meta.env.BASE_URL}column/`} class="column__item-text">全て</a>
+  </li>
+
+  <!-- カテゴリー -->
+  {Object.entries(CATEGORIES).map(([key, category]) => (
+    <li class={`column__item ${currentCategory === key ? "is-active" : ""}`}>
+      <a href={`${import.meta.env.BASE_URL}column/${category.slug}/`} class="column__item-text">
+        {category.name}
+      </a>
+    </li>
+  ))}
+</ul>
+
+<style>
+.column__list{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: calc(20* var(--torem));
+  flex-wrap: wrap;
+  @media(width >= 48rem) {
+      gap: calc(30* var(--torem));
+  }
+}
+.column__item{
+  background-color: var(--white);
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.column__item::after{
+content: "";
+display: block;
+position: absolute;
+top: -1px;
+left: -1px;
+inline-size: calc(100% + 2px);
+block-size: calc(100% + 2px);
+background-color: var(--black);
+z-index: -1;
+background: linear-gradient(135deg, #000000 0%, #2a2a2a 100%);
+}
+.column__item.is-active{
+  opacity: 1;
+  transition: all 0.3s ease;
+  background: linear-gradient(135deg, #000000 0%, #2a2a2a 100%);
+}
+.column__item.is-active .column__item-text{
+  background: none;
+  color: var(--white);
+  -webkit-background-clip: initial;
+-webkit-text-fill-color: initial;
+background-clip: initial;
+text-fill-color: initial;
+}
+.column__item-text{
+  inline-size: fit-content;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  padding: calc(1* var(--torem)) calc(5* var(--torem)) calc(1* var(--torem)) calc(5* var(--torem));
+  font-size: calc(14* var(--torem));
+  font-weight: 700;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, #000000 0%, #2a2a2a 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+text-fill-color: transparent;
+}
+</style>

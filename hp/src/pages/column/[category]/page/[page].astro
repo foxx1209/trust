@@ -5,50 +5,82 @@ import CardCl from "@components/CardCl.astro";
 import Close from "@components/Close.astro";
 import CategoryTabs from "@components/CategoryTabs.astro";
 import { getCollection } from "astro:content";
+import { CATEGORIES, type CategoryKey } from "@src/categories";
 
-const pageSize = 6;
+export async function getStaticPaths() {
+  const pageSize = 6;
+  const allBlogs = await getCollection("blogs");
+  const paths = [];
 
-const allBlogs = await getCollection("blogs");
-const totalPages = Math.ceil(allBlogs.length / pageSize);
+  for (const categoryKey of Object.keys(CATEGORIES)) {
+    const filtered = allBlogs.filter(
+      (blog) => blog.data.category?.includes(categoryKey as any)
+    );
 
-const blogs = allBlogs.slice(0, pageSize);
+    const totalPages = Math.ceil(filtered.length / pageSize);
+
+    for (let page = 2; page <= totalPages; page++) {
+      const start = (page - 1) * pageSize;
+      const end = start + pageSize;
+
+      paths.push({
+        params: {
+          category: categoryKey,
+          page: String(page),
+        },
+        props: {
+          blogs: filtered.slice(start, end),
+          totalPages,
+          currentPage: page,
+          categoryKey,
+        },
+      });
+    }
+  }
+
+  return paths;
+}
+
+const { blogs, totalPages, currentPage, categoryKey } = Astro.props;
+const category = CATEGORIES[categoryKey as CategoryKey];
 ---
 
-<Layout title="コラム一覧 | Nexus Strategy"  description="経営戦略とビジネス変革に関する最新情報">
-<SubFv title="コラム一覧" titleEn="Column" sp/>
-<div class="column" data-aos="fade-up" data-aos-duration="3000">
-  <div class="column__inner">
-  <CategoryTabs currentCategory="all" />
-  
-  <!-- カード表示 -->
-  <CardCl items={blogs} baseUrl="column" />
-   
-    <!-- ページネーション -->
-    {totalPages > 1 && (
-      <div class="column__paganation">
-        {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
-          <a
-            href={
-              page === 1
-                ? `${import.meta.env.BASE_URL}column/`
-                : `${import.meta.env.BASE_URL}column/page/${page}/`
-            }
-            class={page === 1 ? "column__paganation-link is-active" : "column__paganation-link"}
-          >
-            <span class="column__paganation-number">{page}</span>
-          </a>
-        ))}
-      </div>
-    )}
-</div>
-</div>
+<Layout
+  title={`${category.name}の記事一覧 ${currentPage}ページ目 | Nexus Strategy`}
+  description={category.description}
+>
+  <SubFv title={category.name} titleEn="Column" sp/>
+  <div class="column" data-aos="fade-up" data-aos-duration="3000">
+    <div class="column__inner">
+      <CategoryTabs currentCategory={categoryKey} />
+      
+      <CardCl items={blogs} baseUrl="column" />
+      
+      {totalPages > 1 && (
+        <div class="column__paganation">
+          {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+            <a
+              href={
+                page === 1
+                  ? `${import.meta.env.BASE_URL}column/${category.slug}/`
+                  : `${import.meta.env.BASE_URL}column/${category.slug}/page/${page}/`
+              }
+              class={page === currentPage ? "column__paganation-link is-active" : "column__paganation-link"}
+            >
+              <span class="column__paganation-number">{page}</span>
+            </a>
+          ))}
+        </div>
+      )}
+    </div>
+  </div>
   <Close />
 </Layout>
 
 <style>
   .column{
     padding-bottom: calc(80* var(--torem));
-    background: url("../../assets/images/column-cards-bg.png") no-repeat top;
+    background: url("../../../../assets/images/column-cards-bg.png") no-repeat top;
     background-size: cover;
 
     @media(width >= 48rem) {
@@ -134,7 +166,4 @@ text-fill-color: initial;
   opacity: 0.7;
 }
 }
-
-
 </style>
-

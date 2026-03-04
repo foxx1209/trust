@@ -52,7 +52,10 @@ const blogs = defineCollection({
    content: z.string(),
   //  画像フィールド
    img: microCMSImage.optional(),
-   ...microCMSDateFields,
+   category: z.preprocess(
+     (val) => Array.isArray(val) ? val.map(cat => typeof cat === 'string' ? cat.trim() : cat) : val,
+     z.array(z.enum(['strategy', 'ai-tips', 'abm'])).optional()
+   ),   ...microCMSDateFields,
  }),
 });
 

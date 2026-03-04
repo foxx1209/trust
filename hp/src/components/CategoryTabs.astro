@@ -1,23 +1,27 @@
 ---
 import { CATEGORIES } from "@src/categories";
+import { SITE } from "@src/config";
 
 interface Props {
   currentCategory?: string;
 }
 
 const { currentCategory = "all" } = Astro.props;
+
+// baseを正しく処理（末尾のスラッシュを保証）
+const base = SITE.base.endsWith('/') ? SITE.base : `${SITE.base}/`;
 ---
 
 <ul class="column__list">
   <!-- 全て -->
   <li class={`column__item ${currentCategory === "all" ? "is-active" : ""}`}>
-    <a href={`${import.meta.env.BASE_URL}column/`} class="column__item-text">全て</a>
+    <a href={`${base}column/`} class="column__item-text">全て</a>
   </li>
 
   <!-- カテゴリー -->
   {Object.entries(CATEGORIES).map(([key, category]) => (
     <li class={`column__item ${currentCategory === key ? "is-active" : ""}`}>
-      <a href={`${import.meta.env.BASE_URL}column/${category.slug}/`} class="column__item-text">
+      <a href={`${base}column/${category.slug}/`} class="column__item-text">
         {category.name}
       </a>
     </li>

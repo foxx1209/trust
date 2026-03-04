@@ -5,6 +5,7 @@ import Layout from "@layouts//Layout.astro";
 import SubFv from "@components/sub-fv.astro";
 import CardCl from "@components/CardCl.astro";
 import Close from "@components/Close.astro";
+import CategoryTabs from "@components/CategoryTabs.astro";
 import { getCollection } from "astro:content";
 
 // 2ページ目以降のみを生成
@@ -37,18 +38,7 @@ const { blogs, currentPage, totalPages } = Astro.props;
 <SubFv title="コラム一覧" titleEn="Column" sp/>
 <div class="column" data-aos="fade-up" data-aos-duration="3000">
   <div class="column__inner">
-  <ul class="column__list">
-    <li class="column__item is-active">
-      <button class="column__item-text">経営戦略</button>
-    </li>
-    <li class="column__item">
-      <button class="column__item-text">AI実務活用Tips</button>
-    </li>
-    <li class="column__item">
-      <button class="column__item-text">ABM</button>
-    </li>
-    
-  </ul>
+  <CategoryTabs currentCategory="all" />
   
   <!-- カード表示 -->
   <CardCl items={blogs} baseUrl="column" />
@@ -88,65 +78,6 @@ const { blogs, currentPage, totalPages } = Astro.props;
   .column__inner {
     padding: 0 calc(20* var(--torem));
   }
-
-.column__list{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: calc(20* var(--torem));
-  flex-wrap: wrap;
-  @media(width >= 48rem) {
-      gap: calc(30* var(--torem));
-
-  }
-}
-.column__item{
-  background-color: var(--white);
-  position: relative;
-  transition: all 0.3s ease;
-}
-
-.column__item::after{
-content: "";
-display: block;
-position: absolute;
-top: -1px;
-left: -1px;
-inline-size: calc(100% + 2px);
-block-size: calc(100% + 2px);
-background-color: var(--black);
-z-index: -1;
-background: linear-gradient(135deg, #000000 0%, #2a2a2a 100%);
-}
-.column__item.is-active{
-  opacity: 1;
-  transition: all 0.3s ease;
-  background: linear-gradient(135deg, #000000 0%, #2a2a2a 100%);
-}
-.column__item.is-active .column__item-text{
-  background: none;
-  color: var(--white);
-  -webkit-background-clip: initial;
--webkit-text-fill-color: initial;
-background-clip: initial;
-text-fill-color: initial;
-}
-.column__item-text{
-  inline-size: fit-content;
-  text-align: center;
-  text-decoration: none;
-  border: none;
-  padding: calc(1* var(--torem)) calc(5* var(--torem)) calc(1* var(--torem)) calc(5* var(--torem));
-  font-size: calc(14* var(--torem));
-  font-weight: 700;
-  display: grid;
-  place-items: center;
-  background: linear-gradient(135deg, #000000 0%, #2a2a2a 100%);
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-background-clip: text;
-text-fill-color: transparent;
-}
 
 .column__paganation {
 margin-block-start: calc(30* var(--torem));

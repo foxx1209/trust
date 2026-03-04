@@ -13,7 +13,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 export default defineConfig({
   base: SITE.base || undefined,
   site: SITE.url,
-  outDir: 'trust', // ビルド出力フォルダ名を変更する場合はここを編集
+  outDir: 'transform', // ビルド出力フォルダ名を変更する場合はここを編集
   vite: {
     resolve: {
       alias: {
